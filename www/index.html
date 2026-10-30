@@ -432,6 +432,240 @@ body {
 }
 
 /* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.admin-dashboard-card {
+  display: none;
+  grid-column: 1 / -1;
+
+  border: 0;
+  border-radius: 20px;
+
+  padding: 20px;
+
+  min-height: 135px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4d2868,
+      #8f5aad
+    );
+
+  box-shadow:
+    0 8px 22px rgba(70,40,90,.18);
+
+  cursor: pointer;
+
+  text-align: right;
+
+  color: white;
+
+  transition: .2s;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-dashboard-card::after {
+  content: "⚙️";
+
+  position: absolute;
+
+  left: 18px;
+  bottom: -5px;
+
+  font-size: 70px;
+
+  opacity: .10;
+}
+
+.admin-dashboard-card:hover {
+  transform: translateY(-2px);
+}
+
+.admin-dashboard-card .admin-icon {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.admin-dashboard-card strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.admin-dashboard-card span {
+  display: block;
+  font-size: 11px;
+  opacity: .9;
+  line-height: 1.8;
+}
+
+/* =========================
+   ADMIN DASHBOARD SECTION
+========================= */
+
+.admin-header {
+  background:
+    linear-gradient(
+      135deg,
+      #4d2868,
+      #8f5aad
+    );
+
+  color: white;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  margin: 15px 0 18px;
+
+  box-shadow:
+    0 7px 18px rgba(70,40,90,.15);
+}
+
+.admin-header-icon {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.admin-header h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.admin-header p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  opacity: .92;
+}
+
+.admin-role-badge {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.15);
+
+  font-size: 11px;
+}
+
+.admin-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 11px;
+}
+
+.admin-item {
+  border: 1px solid #eee4f4;
+
+  background: #faf7fc;
+
+  border-radius: 17px;
+
+  padding: 17px 12px;
+
+  min-height: 115px;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  color: #4b3557;
+
+  font-family: inherit;
+
+  transition: .2s;
+}
+
+.admin-item:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(70,40,90,.08);
+}
+
+.admin-item-icon {
+  font-size: 29px;
+
+  margin-bottom: 8px;
+}
+
+.admin-item strong {
+  display: block;
+
+  color: #5f3b79;
+
+  font-size: 13px;
+
+  margin-bottom: 5px;
+}
+
+.admin-item small {
+  display: block;
+
+  color: #806e8a;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.admin-security {
+  margin-top: 16px;
+
+  padding: 13px 14px;
+
+  border-radius: 14px;
+
+  background: #f9f2dc;
+
+  border: 1px solid #f0e5bf;
+
+  color: #67542e;
+
+  font-size: 11px;
+
+  line-height: 1.9;
+}
+
+.admin-user-info {
+  margin-top: 12px;
+
+  padding: 12px;
+
+  border-radius: 13px;
+
+  background: rgba(255,255,255,.10);
+
+  font-size: 11px;
+
+  direction: ltr;
+
+  text-align: left;
+
+  word-break: break-word;
+}
+
+@media(max-width:520px) {
+
+  .admin-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+/* =========================
    MAIN
 ========================= */
 
@@ -1088,6 +1322,29 @@ body {
 
     <div class="grid">
 
+      <!-- ADMIN DASHBOARD
+           فقط برای super_admin نمایش داده می‌شود
+      -->
+
+      <button
+        id="adminDashboardCard"
+        class="admin-dashboard-card"
+        onclick="showSection('adminDashboard')">
+
+        <div class="admin-icon">
+          👑
+        </div>
+
+        <strong>
+          داشبورد مدیریت ارشد
+        </strong>
+
+        <span>
+          مدیریت کاربران، محتوا، نقش‌ها، دسترسی‌ها و بخش‌های سامانه
+        </span>
+
+      </button>
+
       <button
         class="card"
         onclick="showSection('announcements')">
@@ -1191,6 +1448,279 @@ body {
     </div>
 
   </div>
+
+  <!-- =========================
+       ADMIN DASHBOARD
+  ========================= -->
+
+  <section
+    id="adminDashboard"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <div class="admin-header">
+
+      <div class="admin-header-icon">
+        👑
+      </div>
+
+      <h3>
+        داشبورد مدیریت ارشد
+      </h3>
+
+      <p>
+        این بخش مخصوص مدیر ارشد و مالک سامانه است.
+        از اینجا مدیریت اصلی سامانه انجام خواهد شد.
+      </p>
+
+      <span class="admin-role-badge">
+        نقش: مدیر ارشد سامانه — Super Admin
+      </span>
+
+      <div
+        id="adminUserInfo"
+        class="admin-user-info">
+        در حال دریافت اطلاعات حساب...
+      </div>
+
+    </div>
+
+    <div class="admin-grid">
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('مدیریت کاربران')">
+
+        <div class="admin-item-icon">
+          👥
+        </div>
+
+        <strong>
+          مدیریت کاربران
+        </strong>
+
+        <small>
+          ایجاد، فعال‌سازی و مدیریت کاربران مدرسه
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('نقش‌ها و دسترسی‌ها')">
+
+        <div class="admin-item-icon">
+          🔐
+        </div>
+
+        <strong>
+          نقش‌ها و دسترسی‌ها
+        </strong>
+
+        <small>
+          مدیریت سطح دسترسی مدیر، معلم، والد و انجمن
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('اطلاعیه‌ها')">
+
+        <div class="admin-item-icon">
+          📢
+        </div>
+
+        <strong>
+          مدیریت اطلاعیه‌ها
+        </strong>
+
+        <small>
+          ایجاد، ویرایش و انتشار اطلاعیه‌های مدرسه
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('تقویم اجرایی')">
+
+        <div class="admin-item-icon">
+          📅
+        </div>
+
+        <strong>
+          تقویم اجرایی
+        </strong>
+
+        <small>
+          برنامه‌های مدرسه بر اساس تاریخ و پایه
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('برنامه هفتگی')">
+
+        <div class="admin-item-icon">
+          🗓️
+        </div>
+
+        <strong>
+          برنامه هفتگی
+        </strong>
+
+        <small>
+          مدیریت برنامه کلاس‌های پایه اول تا ششم
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('تکالیف و آموزش')">
+
+        <div class="admin-item-icon">
+          📚
+        </div>
+
+        <strong>
+          تکالیف و آموزش
+        </strong>
+
+        <small>
+          مدیریت تکالیف بر اساس پایه و کلاس
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('دانش‌آموزان و کلاس‌ها')">
+
+        <div class="admin-item-icon">
+          👧
+        </div>
+
+        <strong>
+          دانش‌آموزان و کلاس‌ها
+        </strong>
+
+        <small>
+          مدیریت پایه، کلاس و ارتباط والد با دانش‌آموز
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('معلمان')">
+
+        <div class="admin-item-icon">
+          👩‍🏫
+        </div>
+
+        <strong>
+          مدیریت معلمان
+        </strong>
+
+        <small>
+          حساب کاربری و دسترسی‌های معلمان
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('پیام‌ها')">
+
+        <div class="admin-item-icon">
+          💬
+        </div>
+
+        <strong>
+          پیام‌ها
+        </strong>
+
+        <small>
+          مدیریت ارتباط مدرسه با خانواده‌ها
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('انتقادات و پیشنهادات')">
+
+        <div class="admin-item-icon">
+          💡
+        </div>
+
+        <strong>
+          انتقادات و پیشنهادات
+        </strong>
+
+        <small>
+          مشاهده و رسیدگی به بازخوردهای خانواده‌ها
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('نظرسنجی‌ها')">
+
+        <div class="admin-item-icon">
+          📊
+        </div>
+
+        <strong>
+          نظرسنجی‌ها
+        </strong>
+
+        <small>
+          ایجاد و مدیریت نظرسنجی‌های مدرسه
+        </small>
+
+      </button>
+
+      <button
+        class="admin-item"
+        onclick="adminComingSoon('گالری')">
+
+        <div class="admin-item-icon">
+          🖼️
+        </div>
+
+        <strong>
+          گالری مدرسه
+        </strong>
+
+        <small>
+          مدیریت تصاویر و فعالیت‌های مدرسه
+        </small>
+
+      </button>
+
+    </div>
+
+    <div class="admin-security">
+
+      🔒 <strong>امنیت:</strong>
+      حساب شما با نقش <strong>super_admin</strong> وارد شده است.
+      سایر نقش‌ها در طراحی نهایی اجازه حذف، تنزل نقش یا محدود کردن حساب مدیر ارشد را نخواهند داشت.
+
+    </div>
+
+  </section>
 
   <!-- =========================
        ANNOUNCEMENTS
@@ -1756,6 +2286,10 @@ body {
 
 let supabaseClient = null;
 
+let currentUser = null;
+
+let currentProfile = null;
+
 try {
 
   if (
@@ -1794,6 +2328,23 @@ try {
 
 function showSection(id) {
 
+  if (id === "adminDashboard") {
+
+    if (
+      !currentProfile ||
+      currentProfile.role !== "super_admin"
+    ) {
+
+      alert(
+        "دسترسی به داشبورد مدیریت ارشد مجاز نیست."
+      );
+
+      return;
+
+    }
+
+  }
+
   document
     .getElementById("home")
     .style.display = "none";
@@ -1806,7 +2357,8 @@ function showSection(id) {
 
     });
 
-  const target = document.getElementById(id);
+  const target =
+    document.getElementById(id);
 
   if (target) {
 
@@ -1961,9 +2513,13 @@ async function handleLogin(event) {
 
     if (data && data.user) {
 
+      currentUser = data.user;
+
       closeLoginModal();
 
       updateLoginUI(data.user);
+
+      await loadUserProfile(data.user);
 
     }
 
@@ -2013,7 +2569,13 @@ async function logoutUser() {
 
     }
 
+    currentUser = null;
+
+    currentProfile = null;
+
     updateLoginUI(null);
+
+    hideAdminDashboard();
 
     goHome();
 
@@ -2069,6 +2631,180 @@ function updateLoginUI(user) {
 }
 
 /* =========================
+   USER PROFILE
+========================= */
+
+async function loadUserProfile(user) {
+
+  if (!supabaseClient || !user) {
+    return;
+  }
+
+  try {
+
+    const {
+      data,
+      error
+    } = await supabaseClient
+      .from("profiles")
+      .select(
+        "id, full_name, username, role, grade_level, class_name, is_active"
+      )
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (error) {
+
+      console.error(
+        "Profile loading error:",
+        error
+      );
+
+      currentProfile = null;
+
+      hideAdminDashboard();
+
+      return;
+
+    }
+
+    currentProfile = data;
+
+    if (
+      data &&
+      data.is_active === true &&
+      data.role === "super_admin"
+    ) {
+
+      showAdminDashboard();
+
+      updateAdminUserInfo(
+        user,
+        data
+      );
+
+    } else {
+
+      hideAdminDashboard();
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Unexpected profile loading error:",
+      error
+    );
+
+    currentProfile = null;
+
+    hideAdminDashboard();
+
+  }
+
+}
+
+/* =========================
+   ADMIN DASHBOARD VISIBILITY
+========================= */
+
+function showAdminDashboard() {
+
+  const card =
+    document.getElementById(
+      "adminDashboardCard"
+    );
+
+  if (card) {
+
+    card.style.display = "block";
+
+  }
+
+}
+
+function hideAdminDashboard() {
+
+  const card =
+    document.getElementById(
+      "adminDashboardCard"
+    );
+
+  if (card) {
+
+    card.style.display = "none";
+
+  }
+
+}
+
+/* =========================
+   ADMIN USER INFORMATION
+========================= */
+
+function updateAdminUserInfo(
+  user,
+  profile
+) {
+
+  const box =
+    document.getElementById(
+      "adminUserInfo"
+    );
+
+  if (!box) {
+    return;
+  }
+
+  const name =
+    profile.full_name ||
+    "مدیر ارشد سامانه";
+
+  const email =
+    user.email ||
+    "";
+
+  box.innerHTML =
+    "نام: " +
+    escapeHtml(name) +
+    "<br>" +
+    "ایمیل: " +
+    escapeHtml(email) +
+    "<br>" +
+    "شناسه نقش: super_admin";
+
+}
+
+/* =========================
+   SAFE HTML
+========================= */
+
+function escapeHtml(value) {
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+/* =========================
+   ADMIN PLACEHOLDER
+========================= */
+
+function adminComingSoon(title) {
+
+  alert(
+    "بخش «" +
+    title +
+    "» در مرحله بعد به دیتابیس متصل می‌شود."
+  );
+
+}
+
+/* =========================
    CHECK CURRENT SESSION
 ========================= */
 
@@ -2077,6 +2813,8 @@ async function checkCurrentUser() {
   if (!supabaseClient) {
 
     updateLoginUI(null);
+
+    hideAdminDashboard();
 
     return;
 
@@ -2098,6 +2836,8 @@ async function checkCurrentUser() {
 
       updateLoginUI(null);
 
+      hideAdminDashboard();
+
       return;
 
     }
@@ -2108,13 +2848,26 @@ async function checkCurrentUser() {
       data.session.user
     ) {
 
+      currentUser =
+        data.session.user;
+
       updateLoginUI(
+        data.session.user
+      );
+
+      await loadUserProfile(
         data.session.user
       );
 
     } else {
 
+      currentUser = null;
+
+      currentProfile = null;
+
       updateLoginUI(null);
+
+      hideAdminDashboard();
 
     }
 
@@ -2126,6 +2879,8 @@ async function checkCurrentUser() {
     );
 
     updateLoginUI(null);
+
+    hideAdminDashboard();
 
   }
 
@@ -2142,20 +2897,33 @@ function setupAuthListener() {
   }
 
   supabaseClient.auth.onAuthStateChange(
-    function(event, session) {
+    async function(event, session) {
 
       if (
         session &&
         session.user
       ) {
 
+        currentUser =
+          session.user;
+
         updateLoginUI(
+          session.user
+        );
+
+        await loadUserProfile(
           session.user
         );
 
       } else {
 
+        currentUser = null;
+
+        currentProfile = null;
+
         updateLoginUI(null);
+
+        hideAdminDashboard();
 
       }
 
