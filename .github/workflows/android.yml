@@ -39,13 +39,13 @@ jobs:
         run: ./gradlew assembleRelease
 
       - name: Find APK
-  run: |
-    echo "Searching for APK files..."
-    find android -type f -name "*.apk" -print
+        run: |
+          echo "Searching for APK files..."
+          find android -type f -name "*.apk" -print
 
-- name: Upload APK
-  uses: actions/upload-artifact@v4
-  with:
-    name: alavi-islami-apk
-    path: android/**/*.apk
-    if-no-files-found: error
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: alavi-islami-apk
+          path: android/**/*.apk
+          if-no-files-found: error
