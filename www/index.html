@@ -1,224 +1,415 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#7b4aa8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-  <title>دبستان دخترانه علوی اسلامی</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #faf7fc;
-      color: #333;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #7b4aa8, #b979b8);
-      color: white;
-      padding: 24px 18px 30px;
-      border-radius: 0 0 28px 28px;
-      text-align: center;
-    }
-
-    .iran {
-      width: 120px;
-      height: 70px;
-      margin: 0 auto 12px;
-      position: relative;
-    }
-
-    .iran::before {
-      content: "ایران";
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: white;
-      border-radius: 45% 55% 48% 52%;
-      background:
-        linear-gradient(
-          to bottom,
-          #239f40 0 33%,
-          #fff 33% 66%,
-          #da0000 66% 100%
-        );
-      clip-path: polygon(
-        15% 30%, 28% 12%, 48% 18%, 65% 5%,
-        83% 22%, 72% 42%, 92% 58%, 76% 75%,
-        58% 68%, 43% 88%, 25% 72%, 8% 78%,
-        17% 55%
-      );
-    }
-
-    h1 {
-      margin: 8px 0;
-      font-size: 24px;
-    }
-
-    .subtitle {
-      margin: 0;
-      opacity: .9;
-      font-size: 14px;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 20px 15px 40px;
-    }
-
-    .welcome {
-      background: white;
-      border-radius: 20px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 5px 20px rgba(70, 40, 90, .08);
-    }
-
-    .welcome h2 {
-      margin-top: 0;
-      color: #704394;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .card {
-      background: white;
-      border: none;
-      border-radius: 20px;
-      padding: 20px 12px;
-      min-height: 115px;
-      box-shadow: 0 5px 18px rgba(70, 40, 90, .08);
-      cursor: pointer;
-      text-align: center;
-      transition: transform .15s;
-    }
-
-    .card:active {
-      transform: scale(.97);
-    }
-
-    .icon {
-      font-size: 30px;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: bold;
-      color: #56336d;
-    }
-
-    .footer {
-      text-align: center;
-      color: #888;
-      font-size: 12px;
-      padding: 25px 0 5px;
-    }
-
-    @media (min-width: 650px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7b4aa8">
+<title>دبستان دخترانه علوی اسلامی</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f8f4fb;
+  color: #33283b;
+}
+.header {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  padding: 35px 20px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg,#74439b,#a66bc1);
+  color: white;
+}
+.diagonal-flag {
+  position: absolute;
+  left: -48px;
+  top: -48px;
+  width: 190px;
+  height: 115px;
+  transform: rotate(-28deg);
+  background: linear-gradient(
+    to bottom,
+    #239f40 0 33%,
+    #fff 33% 66%,
+    #da0000 66% 100%
+  );
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2);
+}
+.diagonal-flag::after {
+  content: "الله اکبر";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #da0000;
+  font-size: 11px;
+  font-weight: bold;
+}
+.leaders {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leader {
+  width: 55px;
+  height: 70px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 12px 12px 6px 6px;
+  border: 2px solid white;
+  background: #eee;
+}
+.leader-name {
+  margin-top: 3px;
+  font-size: 7px;
+  color: white;
+  font-weight: bold;
+}
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+.header h1 {
+  margin: 5px 0;
+  font-size: 25px;
+}
+.subtitle {
+  margin: 8px 0;
+  font-size: 14px;
+  opacity: .9;
+}
+.iran {
+  width: 90px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background:
+    linear-gradient(
+      to bottom,
+      #239f40 0 33%,
+      white 33% 66%,
+      #da0000 66%
+    );
+  clip-path: polygon(
+    10% 35%, 20% 20%, 35% 25%, 45% 10%,
+    60% 25%, 75% 20%, 90% 40%, 80% 55%,
+    90% 70%, 70% 75%, 60% 90%, 45% 75%,
+    30% 85%, 20% 65%, 5% 60%
+  );
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 18px;
+}
+.welcome {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 5px 18px rgba(70,40,90,.08);
+}
+.welcome h2 {
+  margin-top: 0;
+  color: #71439a;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+.card {
+  border: 0;
+  border-radius: 18px;
+  padding: 18px 12px;
+  min-height: 110px;
+  background: white;
+  box-shadow: 0 5px 16px rgba(70,40,90,.08);
+  cursor: pointer;
+  text-align: center;
+  color: #3e3046;
+  font-size: 14px;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+.icon {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+.section {
+  display: none;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 18px;
+  box-shadow: 0 5px 18px rgba(70,40,90,.08);
+}
+.section.active {
+  display: block;
+}
+.section h2 {
+  color: #71439a;
+}
+.back {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 15px;
+  background: #eee5f5;
+  color: #633b84;
+  cursor: pointer;
+}
+.item {
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 14px;
+  background: #faf7fc;
+  border-right: 4px solid #9b69ba;
+}
+.footer {
+  text-align: center;
+  padding: 25px;
+  color: #806e8a;
+  font-size: 12px;
+}
+@media(max-width:520px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header {
+    min-height: 225px;
+  }
+  .header h1 {
+    font-size: 21px;
+  }
+  .leader {
+    width: 45px;
+    height: 58px;
+  }
+}
+</style>
 </head>
-
 <body>
-
-  <header class="header">
+<header class="header">
+  <div class="diagonal-flag"></div>
+  <div class="leaders">
+<div class="leader-card">
+  <img
+    class="leader"
+    src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
+    alt="امام خمینی">
+  <span class="leader-name">امام خمینی</span>
+</div>
+<div class="leader-card">
+  <img
+    class="leader"
+    src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
+    alt="شهید آیت‌الله خامنه‌ای">
+  <span class="leader-name">شهید آیت‌الله خامنه‌ای</span>
+</div>
+<div class="leader-card">
+  <img
+    class="leader"
+    src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
+    alt="آیت‌الله مجتبی خامنه‌ای">
+  <span class="leader-name">آیت‌الله مجتبی خامنه‌ای</span>
+</div>
+  </div>
+  <div class="header-content">
     <div class="iran"></div>
     <h1>دبستان دخترانه علوی اسلامی</h1>
-    <p class="subtitle">سامانه ارتباطی مدرسه و خانواده</p>
-  </header>
-
-  <main class="container">
-
-    <section class="welcome">
-      <h2>🌷 خوش آمدید</h2>
-      <p>
-        به سامانه دبستان دخترانه علوی اسلامی خوش آمدید.
-        اطلاعیه‌ها، برنامه‌های مدرسه، تکالیف و ارتباط با مدرسه
-        از اینجا در دسترس شماست.
-      </p>
-    </section>
-
-    <section class="grid">
-
-      <button class="card">
-        <span class="icon">📢</span>
-        <span class="card-title">اطلاعیه‌ها</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">📅</span>
-        <span class="card-title">تقویم اجرایی مدرسه</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">🗓️</span>
-        <span class="card-title">برنامه هفتگی کلاس</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">📚</span>
-        <span class="card-title">تکالیف و برنامه آموزشی</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">💬</span>
-        <span class="card-title">ارتباط با مدیریت</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">👩‍👧</span>
-        <span class="card-title">انجمن اولیا و مربیان</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">💡</span>
-        <span class="card-title">انتقاد و پیشنهاد</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">📊</span>
-        <span class="card-title">نظرسنجی‌ها</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">🖼️</span>
-        <span class="card-title">گالری</span>
-      </button>
-
-      <button class="card">
-        <span class="icon">📞</span>
-        <span class="card-title">تماس با مدرسه</span>
-      </button>
-
-    </section>
-
-    <div class="footer">
-      دبستان دخترانه علوی اسلامی
-    </div>
-
-  </main>
-
+    <div class="subtitle">سامانه ارتباطی مدرسه و خانواده</div>
+  </div>
+</header>
+<main class="container">
+  <div id="home">
+<div class="welcome">
+  <h2>🌸 خوش آمدید</h2>
+  <p>
+    به سامانه ارتباطی دبستان دخترانه علوی اسلامی خوش آمدید.
+  </p>
+  <p>
+    اطلاعیه‌ها، برنامه‌های مدرسه، تکالیف و ارتباط با مدرسه
+    در یک مکان.
+  </p>
+</div>
+<div class="grid">
+  <button class="card" onclick="showSection('announcements')">
+    <div class="icon">📢</div>
+    اطلاعیه‌ها
+  </button>
+  <button class="card" onclick="showSection('calendar')">
+    <div class="icon">📅</div>
+    تقویم اجرایی مدرسه
+  </button>
+  <button class="card" onclick="showSection('schedule')">
+    <div class="icon">🗓️</div>
+    برنامه هفتگی
+  </button>
+  <button class="card" onclick="showSection('homework')">
+    <div class="icon">📚</div>
+    تکالیف و آموزش
+  </button>
+  <button class="card" onclick="showSection('management')">
+    <div class="icon">💬</div>
+    ارتباط با مدیریت
+  </button>
+  <button class="card" onclick="showSection('pta')">
+    <div class="icon">👩‍👩‍👧</div>
+    انجمن اولیا و مربیان
+  </button>
+  <button class="card" onclick="showSection('feedback')">
+    <div class="icon">💡</div>
+    انتقادات و پیشنهادات
+  </button>
+  <button class="card" onclick="showSection('polls')">
+    <div class="icon">📊</div>
+    نظرسنجی‌ها
+  </button>
+  <button class="card" onclick="showSection('gallery')">
+    <div class="icon">🖼️</div>
+    گالری
+  </button>
+  <button class="card" onclick="showSection('contact')">
+    <div class="icon">☎️</div>
+    تماس با مدرسه
+  </button>
+</div>
+  </div>
+  <section id="announcements" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📢 اطلاعیه‌های مدرسه</h2>
+<div class="item">
+  <strong>اطلاعیه جدید</strong>
+  <p>اطلاعیه‌های رسمی مدرسه در این بخش نمایش داده خواهد شد.</p>
+</div>
+  </section>
+  <section id="calendar" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📅 تقویم اجرایی مدرسه</h2>
+<div class="item">
+  <strong>برنامه‌های اجرایی ماه</strong>
+  <p>برنامه‌های مدرسه بر اساس تاریخ و پایه در این بخش نمایش داده می‌شوند.</p>
+</div>
+  </section>
+  <section id="schedule" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>🗓️ برنامه هفتگی کلاس‌ها</h2>
+<div class="item">
+  پایه اول
+</div>
+<div class="item">
+  پایه دوم
+</div>
+<div class="item">
+  پایه سوم
+</div>
+<div class="item">
+  پایه چهارم
+</div>
+<div class="item">
+  پایه پنجم
+</div>
+<div class="item">
+  پایه ششم
+</div>
+  </section>
+  <section id="homework" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📚 تکالیف و برنامه‌های آموزشی</h2>
+<div class="item">
+  تکالیف دانش‌آموزان در این بخش قرار خواهد گرفت.
+</div>
+  </section>
+  <section id="management" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>💬 ارتباط با مدیریت</h2>
+<div class="item">
+  امکان ارسال پیام مستقیم به مدیریت مدرسه در این بخش قرار خواهد گرفت.
+</div>
+  </section>
+  <section id="pta" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>👩‍👩‍👧 انجمن اولیا و مربیان</h2>
+<div class="item">
+  اخبار و فعالیت‌های انجمن اولیا و مربیان.
+</div>
+  </section>
+  <section id="feedback" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>💡 انتقادات و پیشنهادات</h2>
+<div class="item">
+  والدین می‌توانند پیشنهادها و انتقادات خود را ثبت کنند.
+</div>
+  </section>
+  <section id="polls" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📊 نظرسنجی‌ها</h2>
+<div class="item">
+  نظرسنجی‌های فعال مدرسه در این بخش نمایش داده خواهد شد.
+</div>
+  </section>
+  <section id="gallery" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>🖼️ گالری مدرسه</h2>
+<div class="item">
+  تصاویر برنامه‌ها و فعالیت‌های مدرسه.
+</div>
+  </section>
+  <section id="contact" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>☎️ تماس با مدرسه</h2>
+<div class="item">
+  اطلاعات تماس مدرسه در این بخش قرار خواهد گرفت.
+</div>
+  </section>
+</main>
+<footer class="footer">
+  دبستان دخترانه علوی اسلامی
+  <br>
+  <small>سامانه ارتباطی مدرسه و خانواده</small>
+</footer>
+<script>
+function showSection(id) {
+  document.getElementById("home").style.display = "none";
+  document.querySelectorAll(".section")
+    .forEach(function(section) {
+      section.classList.remove("active");
+    });
+  document.getElementById(id)
+    .classList.add("active");
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+function goHome() {
+  document.querySelectorAll(".section")
+    .forEach(function(section) {
+      section.classList.remove("active");
+    });
+  document.getElementById("home").style.display = "block";
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
 </body>
 </html>
