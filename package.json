@@ -10,5 +10,7 @@
     "@capacitor/cli": "^7.4.3",
     "@capacitor/core": "^7.4.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
