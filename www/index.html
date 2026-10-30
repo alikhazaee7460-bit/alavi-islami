@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7b4aa8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <title>دبستان دخترانه علوی اسلامی</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #faf7fc;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #7b4aa8, #b979b8);
+      color: white;
+      padding: 24px 18px 30px;
+      border-radius: 0 0 28px 28px;
+      text-align: center;
+    }
+
+    .iran {
+      width: 120px;
+      height: 70px;
+      margin: 0 auto 12px;
+      position: relative;
+    }
+
+    .iran::before {
+      content: "ایران";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      border-radius: 45% 55% 48% 52%;
+      background:
+        linear-gradient(
+          to bottom,
+          #239f40 0 33%,
+          #fff 33% 66%,
+          #da0000 66% 100%
+        );
+      clip-path: polygon(
+        15% 30%, 28% 12%, 48% 18%, 65% 5%,
+        83% 22%, 72% 42%, 92% 58%, 76% 75%,
+        58% 68%, 43% 88%, 25% 72%, 8% 78%,
+        17% 55%
+      );
+    }
+
+    h1 {
+      margin: 8px 0;
+      font-size: 24px;
+    }
+
+    .subtitle {
+      margin: 0;
+      opacity: .9;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 20px 15px 40px;
+    }
+
+    .welcome {
+      background: white;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 5px 20px rgba(70, 40, 90, .08);
+    }
+
+    .welcome h2 {
+      margin-top: 0;
+      color: #704394;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 20px 12px;
+      min-height: 115px;
+      box-shadow: 0 5px 18px rgba(70, 40, 90, .08);
+      cursor: pointer;
+      text-align: center;
+      transition: transform .15s;
+    }
+
+    .card:active {
+      transform: scale(.97);
+    }
+
+    .icon {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #56336d;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+      padding: 25px 0 5px;
+    }
+
+    @media (min-width: 650px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="iran"></div>
+    <h1>دبستان دخترانه علوی اسلامی</h1>
+    <p class="subtitle">سامانه ارتباطی مدرسه و خانواده</p>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <h2>🌷 خوش آمدید</h2>
+      <p>
+        به سامانه دبستان دخترانه علوی اسلامی خوش آمدید.
+        اطلاعیه‌ها، برنامه‌های مدرسه، تکالیف و ارتباط با مدرسه
+        از اینجا در دسترس شماست.
+      </p>
+    </section>
+
+    <section class="grid">
+
+      <button class="card">
+        <span class="icon">📢</span>
+        <span class="card-title">اطلاعیه‌ها</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">📅</span>
+        <span class="card-title">تقویم اجرایی مدرسه</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">🗓️</span>
+        <span class="card-title">برنامه هفتگی کلاس</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">📚</span>
+        <span class="card-title">تکالیف و برنامه آموزشی</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">💬</span>
+        <span class="card-title">ارتباط با مدیریت</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">👩‍👧</span>
+        <span class="card-title">انجمن اولیا و مربیان</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">💡</span>
+        <span class="card-title">انتقاد و پیشنهاد</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">📊</span>
+        <span class="card-title">نظرسنجی‌ها</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">🖼️</span>
+        <span class="card-title">گالری</span>
+      </button>
+
+      <button class="card">
+        <span class="icon">📞</span>
+        <span class="card-title">تماس با مدرسه</span>
+      </button>
+
+    </section>
+
+    <div class="footer">
+      دبستان دخترانه علوی اسلامی
+    </div>
+
+  </main>
+
+</body>
+</html>
