@@ -26,81 +26,25 @@ body {
 .header {
   position: relative;
   overflow: hidden;
-  min-height: 255px;
-  padding: 25px 18px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 333px;
+  padding: 0;
+  display: block;
   text-align: center;
-  background: linear-gradient(135deg, #74439b, #a66bc1);
+  background: #ffffff;
   color: white;
 }
 
-/* پرچم ایران به شکل روبان موج‌دار */
+/* هدر اول: تصویر واقعی پرچم ایران */
 
-.flag-ribbon {
-  position: absolute;
-  left: -45px;
-  top: 12px;
-  width: 225px;
-  height: 78px;
-  transform: rotate(-13deg);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  z-index: 3;
-}
+.flag-header {
+  position: relative;
+  width: 100%;
+  height: 255px;
 
-.flag-ribbon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #239f40 0%,
-      #239f40 33.33%,
-      #ffffff 33.33%,
-      #ffffff 66.66%,
-      #da0000 66.66%,
-      #da0000 100%
-    );
-
-  clip-path: polygon(
-    0 12%,
-    10% 3%,
-    22% 11%,
-    35% 2%,
-    48% 10%,
-    61% 1%,
-    74% 10%,
-    87% 3%,
-    100% 12%,
-    95% 88%,
-    84% 97%,
-    71% 89%,
-    58% 99%,
-    45% 90%,
-    32% 98%,
-    18% 89%,
-    6% 97%,
-    0 86%
-  );
-}
-
-.flag-ribbon::after {
-  content: "الله اکبر";
-  position: absolute;
-  left: 25px;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  color: #c51616;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  background-image: url("https://tarsimdg.com/wp-content/uploads/2026/02/25594725-a561-4fc1-a9ad-1e548a850567_11zon.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* تصاویر شخصیت‌ها */
@@ -152,30 +96,56 @@ body {
   font-weight: bold;
 
   text-align: center;
+
+  text-shadow:
+    0 1px 3px rgba(0,0,0,.8);
 }
 
-/* عنوان اصلی */
+/* =========================
+   HEADER SECOND
+========================= */
 
-.header-content {
-  position: relative;
-  z-index: 2;
+.header-second {
+  width: 100%;
 
-  padding-top: 72px;
+  min-height: 78px;
+
+  background: linear-gradient(
+    135deg,
+    #74439b,
+    #a66bc1
+  );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 15px;
+
+  text-align: center;
 }
 
-.header h1 {
-  margin: 8px 0;
+.header-second h1 {
+  margin: 0 0 7px;
 
-  font-size: 26px;
+  font-size: 23px;
+
   font-weight: bold;
+
+  line-height: 1.4;
 }
 
-.subtitle {
-  margin: 8px 0;
+.header-second .subtitle {
+  margin: 0;
 
-  font-size: 15px;
+  font-size: 14px;
 
   opacity: .95;
+
+  line-height: 1.5;
 }
 
 /* =========================
@@ -573,35 +543,16 @@ body {
 @media(max-width:520px) {
 
   .header {
-    min-height: 250px;
-
-    padding-left: 12px;
-    padding-right: 12px;
+    min-height: 322px;
   }
 
-  .header h1 {
-    font-size: 21px;
-  }
-
-  .header-content {
-    padding-top: 78px;
-  }
-
-  .flag-ribbon {
-    left: -60px;
-
-    top: 8px;
-
-    width: 190px;
-
-    height: 65px;
+  .flag-header {
+    height: 250px;
   }
 
   .leaders {
     right: 5px;
-
     top: 8px;
-
     gap: 3px;
   }
 
@@ -611,12 +562,25 @@ body {
 
   .leader {
     width: 46px;
-
     height: 59px;
   }
 
   .leader-name {
     font-size: 6px;
+  }
+
+  .header-second {
+    min-height: 72px;
+    padding: 9px 10px;
+  }
+
+  .header-second h1 {
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  .header-second .subtitle {
+    font-size: 12px;
   }
 
   .grid {
@@ -634,64 +598,63 @@ body {
 
 <header class="header">
 
-  <!-- پرچم ایران به شکل روبان -->
-  <div
-    class="flag-ribbon"
-    aria-label="پرچم ایران">
+  <!-- هدر اول: پرچم ایران -->
+
+  <div class="flag-header">
+
+    <!-- تصاویر شخصیت‌ها -->
+
+    <div class="leaders">
+
+      <div class="leader-card">
+
+        <img
+          class="leader"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
+          alt="امام خمینی">
+
+        <span class="leader-name">
+          امام خمینی
+        </span>
+
+      </div>
+
+
+      <div class="leader-card">
+
+        <img
+          class="leader"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
+          alt="شهید آیت‌الله سید علی خامنه‌ای">
+
+        <span class="leader-name">
+          شهید آیت‌الله سید علی خامنه‌ای
+        </span>
+
+      </div>
+
+
+      <div class="leader-card">
+
+        <img
+          class="leader"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
+          alt="آیت‌الله سید مجتبی خامنه‌ای">
+
+        <span class="leader-name">
+          آیت‌الله سید مجتبی خامنه‌ای
+        </span>
+
+      </div>
+
+    </div>
+
   </div>
 
 
-  <!-- تصاویر شخصیت‌ها -->
+  <!-- هدر دوم: عنوان مدرسه -->
 
-  <div class="leaders">
-
-    <div class="leader-card">
-
-      <img
-        class="leader"
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
-        alt="امام خمینی">
-
-      <span class="leader-name">
-        امام خمینی
-      </span>
-
-    </div>
-
-
-    <div class="leader-card">
-
-      <img
-        class="leader"
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
-        alt="شهید آیت‌الله سید علی خامنه‌ای">
-
-      <span class="leader-name">
-        شهید آیت‌الله سید علی خامنه‌ای
-      </span>
-
-    </div>
-
-
-    <div class="leader-card">
-
-      <img
-        class="leader"
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
-        alt="آیت‌الله سید مجتبی خامنه‌ای">
-
-      <span class="leader-name">
-        آیت‌الله سید مجتبی خامنه‌ای
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <!-- عنوان -->
-
-  <div class="header-content">
+  <div class="header-second">
 
     <h1>
       دبستان دخترانه علوی اسلامی
