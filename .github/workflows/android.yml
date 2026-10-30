@@ -34,18 +34,18 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Build Release APK
+      - name: Build Debug APK
         working-directory: android
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleDebug
 
       - name: Find APK
         run: |
           echo "Searching for APK files..."
           find android -type f -name "*.apk" -print
 
-      - name: Upload APK
+      - name: Upload Installable Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: alavi-islami-apk
+          name: alavi-islami-debug-apk
           path: android/**/*.apk
           if-no-files-found: error
