@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7b4aa8">
+
 <title>دبستان دخترانه علوی اسلامی</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -34,8 +39,6 @@ body {
   color: white;
 }
 
-/* هدر اول: تصویر واقعی پرچم ایران */
-
 .flag-header {
   position: relative;
   width: 100%;
@@ -46,8 +49,6 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-
-/* تصاویر شخصیت‌ها */
 
 .leaders {
   position: absolute;
@@ -146,6 +147,288 @@ body {
   opacity: .95;
 
   line-height: 1.5;
+}
+
+/* =========================
+   LOGIN AREA
+========================= */
+
+.login-bar {
+  width: 100%;
+  background: #ffffff;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee4f4;
+  box-shadow: 0 2px 8px rgba(70,40,90,.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 58px;
+}
+
+.login-status {
+  font-size: 12px;
+  color: #806e8a;
+}
+
+.login-button,
+.logout-button {
+
+  border: 0;
+  border-radius: 12px;
+
+  padding: 10px 18px;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.login-button {
+
+  background: linear-gradient(
+    135deg,
+    #74439b,
+    #a66bc1
+  );
+
+  color: white;
+}
+
+.logout-button {
+
+  background: #eee5f5;
+  color: #633b84;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   LOGIN MODAL
+========================= */
+
+.login-modal {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(30,20,35,.55);
+
+  z-index: 9999;
+
+  padding: 20px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal.active {
+  display: flex;
+}
+
+.login-box {
+
+  width: 100%;
+  max-width: 390px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 25px 20px;
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.25);
+
+  text-align: right;
+}
+
+.login-box-icon {
+
+  width: 62px;
+  height: 62px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 20px;
+
+  background: #f1e7f7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 31px;
+
+  text-align: center;
+}
+
+.login-box h2 {
+
+  text-align: center;
+
+  margin: 0 0 7px;
+
+  color: #71439a;
+
+  font-size: 21px;
+}
+
+.login-box-subtitle {
+
+  text-align: center;
+
+  margin: 0 0 20px;
+
+  color: #806e8a;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+.login-field {
+
+  margin-bottom: 14px;
+}
+
+.login-field label {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #5f3b79;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.login-field input {
+
+  width: 100%;
+
+  padding: 13px 12px;
+
+  border: 1px solid #e2d5e8;
+
+  border-radius: 13px;
+
+  background: #faf7fc;
+
+  color: #33283b;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  direction: ltr;
+
+  text-align: left;
+}
+
+.login-field input:focus {
+
+  border-color: #9b69ba;
+
+  box-shadow:
+    0 0 0 3px rgba(155,105,186,.10);
+}
+
+.login-error {
+
+  display: none;
+
+  background: #fff0f0;
+
+  border: 1px solid #f0cccc;
+
+  color: #a33a3a;
+
+  border-radius: 12px;
+
+  padding: 10px;
+
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+.login-error.active {
+  display: block;
+}
+
+.login-submit {
+
+  width: 100%;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  padding: 13px;
+
+  background: linear-gradient(
+    135deg,
+    #74439b,
+    #a66bc1
+  );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.login-submit:disabled {
+
+  opacity: .65;
+
+  cursor: wait;
+}
+
+.login-close {
+
+  width: 100%;
+
+  margin-top: 9px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #806e8a;
+
+  padding: 9px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
 }
 
 /* =========================
@@ -502,6 +785,7 @@ body {
 }
 
 @media(max-width:520px) {
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -586,7 +870,23 @@ body {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .login-bar {
+    padding: 9px 10px;
+  }
+
+  .login-status {
+    font-size: 10px;
+  }
+
+  .login-button,
+  .logout-button {
+    padding: 9px 13px;
+    font-size: 11px;
+  }
+
 }
+
 </style>
 </head>
 
@@ -598,11 +898,7 @@ body {
 
 <header class="header">
 
-  <!-- هدر اول: پرچم ایران -->
-
   <div class="flag-header">
-
-    <!-- تصاویر شخصیت‌ها -->
 
     <div class="leaders">
 
@@ -619,7 +915,6 @@ body {
 
       </div>
 
-
       <div class="leader-card">
 
         <img
@@ -632,7 +927,6 @@ body {
         </span>
 
       </div>
-
 
       <div class="leader-card">
 
@@ -651,9 +945,6 @@ body {
 
   </div>
 
-
-  <!-- هدر دوم: عنوان مدرسه -->
-
   <div class="header-second">
 
     <h1>
@@ -668,6 +959,124 @@ body {
 
 </header>
 
+<!-- =========================
+     LOGIN BAR
+========================= -->
+
+<div class="login-bar">
+
+  <span
+    id="loginStatus"
+    class="login-status">
+
+    برای ورود به بخش‌های اختصاصی سامانه وارد شوید.
+
+  </span>
+
+  <button
+    id="loginButton"
+    class="login-button"
+    onclick="openLoginModal()">
+
+    🔐 ورود به سامانه
+
+  </button>
+
+  <button
+    id="logoutButton"
+    class="logout-button"
+    onclick="logoutUser()"
+    style="display:none;">
+
+    خروج
+
+  </button>
+
+</div>
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div
+  id="loginModal"
+  class="login-modal">
+
+  <div class="login-box">
+
+    <div class="login-box-icon">
+      🔐
+    </div>
+
+    <h2>
+      ورود به سامانه
+    </h2>
+
+    <p class="login-box-subtitle">
+      برای ورود، ایمیل و رمز عبور حساب کاربری خود را وارد کنید.
+    </p>
+
+    <div
+      id="loginError"
+      class="login-error">
+    </div>
+
+    <form
+      id="loginForm"
+      onsubmit="handleLogin(event)">
+
+      <div class="login-field">
+
+        <label for="loginEmail">
+          ایمیل
+        </label>
+
+        <input
+          id="loginEmail"
+          type="email"
+          autocomplete="email"
+          placeholder="ایمیل خود را وارد کنید"
+          required>
+
+      </div>
+
+      <div class="login-field">
+
+        <label for="loginPassword">
+          رمز عبور
+        </label>
+
+        <input
+          id="loginPassword"
+          type="password"
+          autocomplete="current-password"
+          placeholder="رمز عبور"
+          required>
+
+      </div>
+
+      <button
+        id="loginSubmit"
+        class="login-submit"
+        type="submit">
+
+        ورود
+
+      </button>
+
+    </form>
+
+    <button
+      class="login-close"
+      onclick="closeLoginModal()">
+
+      انصراف
+
+    </button>
+
+  </div>
+
+</div>
 
 <!-- =========================
      MAIN
@@ -676,8 +1085,6 @@ body {
 <main class="container">
 
   <div id="home">
-
-    <!-- خوش‌آمدگویی تکراری حذف شد -->
 
     <div class="grid">
 
@@ -691,7 +1098,6 @@ body {
 
       </button>
 
-
       <button
         class="card"
         onclick="showSection('calendar')">
@@ -701,7 +1107,6 @@ body {
         تقویم اجرایی مدرسه
 
       </button>
-
 
       <button
         class="card"
@@ -713,7 +1118,6 @@ body {
 
       </button>
 
-
       <button
         class="card"
         onclick="showSection('homework')">
@@ -723,7 +1127,6 @@ body {
         تکالیف و آموزش
 
       </button>
-
 
       <button
         class="card"
@@ -735,7 +1138,6 @@ body {
 
       </button>
 
-
       <button
         class="card"
         onclick="showSection('pta')">
@@ -745,7 +1147,6 @@ body {
         انجمن اولیا و مربیان
 
       </button>
-
 
       <button
         class="card"
@@ -757,7 +1158,6 @@ body {
 
       </button>
 
-
       <button
         class="card"
         onclick="showSection('polls')">
@@ -768,7 +1168,6 @@ body {
 
       </button>
 
-
       <button
         class="card"
         onclick="showSection('gallery')">
@@ -778,7 +1177,6 @@ body {
         گالری
 
       </button>
-
 
       <button
         class="card"
@@ -793,7 +1191,6 @@ body {
     </div>
 
   </div>
-
 
   <!-- =========================
        ANNOUNCEMENTS
@@ -829,7 +1226,6 @@ body {
 
   </section>
 
-
   <!-- =========================
        CALENDAR
   ========================= -->
@@ -863,7 +1259,6 @@ body {
     </div>
 
   </section>
-
 
   <!-- =========================
        WEEKLY SCHEDULE
@@ -911,7 +1306,6 @@ body {
 
   </section>
 
-
   <!-- =========================
        HOMEWORK
   ========================= -->
@@ -939,7 +1333,6 @@ body {
     </div>
 
   </section>
-
 
   <!-- =========================
        MANAGEMENT
@@ -969,7 +1362,6 @@ body {
 
   </section>
 
-
   <!-- =========================
        PTA
   ========================= -->
@@ -997,7 +1389,6 @@ body {
     </div>
 
   </section>
-
 
   <!-- =========================
        FEEDBACK
@@ -1027,7 +1418,6 @@ body {
 
   </section>
 
-
   <!-- =========================
        POLLS
   ========================= -->
@@ -1056,7 +1446,6 @@ body {
 
   </section>
 
-
   <!-- =========================
        GALLERY
   ========================= -->
@@ -1084,7 +1473,6 @@ body {
     </div>
 
   </section>
-
 
   <!-- =========================
        CONTACT
@@ -1118,7 +1506,6 @@ body {
 
     </div>
 
-
     <div class="contact-grid">
 
       <div class="contact-card">
@@ -1141,7 +1528,6 @@ body {
 
       </div>
 
-
       <div class="contact-card">
 
         <div class="contact-card-icon">
@@ -1161,7 +1547,6 @@ body {
         </div>
 
       </div>
-
 
       <div class="contact-card">
 
@@ -1185,7 +1570,6 @@ body {
 
     </div>
 
-
     <div class="contact-block">
 
       <div class="block-title">
@@ -1197,7 +1581,6 @@ body {
         </h3>
 
       </div>
-
 
       <a
         class="phone-card"
@@ -1224,7 +1607,6 @@ body {
         </div>
 
       </a>
-
 
       <a
         class="phone-card"
@@ -1254,7 +1636,6 @@ body {
 
     </div>
 
-
     <div class="contact-block">
 
       <div class="block-title">
@@ -1267,7 +1648,6 @@ body {
 
       </div>
 
-
       <div class="address-card">
 
         <div class="address-icon">
@@ -1279,7 +1659,6 @@ body {
         </p>
 
       </div>
-
 
       <a
         class="map-button"
@@ -1311,7 +1690,6 @@ body {
 
     </div>
 
-
     <div class="contact-block">
 
       <div class="block-title">
@@ -1323,7 +1701,6 @@ body {
         </h3>
 
       </div>
-
 
       <div class="hours-card">
 
@@ -1355,7 +1732,6 @@ body {
 
 </main>
 
-
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1372,8 +1748,49 @@ body {
 
 </footer>
 
-
 <script>
+
+/* =========================
+   SUPABASE CLIENT
+========================= */
+
+let supabaseClient = null;
+
+try {
+
+  if (
+    window.supabaseConfig &&
+    window.supabaseConfig.url &&
+    window.supabaseConfig.key &&
+    window.supabase &&
+    typeof window.supabase.createClient === "function"
+  ) {
+
+    supabaseClient = window.supabase.createClient(
+      window.supabaseConfig.url,
+      window.supabaseConfig.key
+    );
+
+  } else {
+
+    console.error(
+      "Supabase configuration or library was not found."
+    );
+
+  }
+
+} catch (error) {
+
+  console.error(
+    "Supabase initialization error:",
+    error
+  );
+
+}
+
+/* =========================
+   SECTION NAVIGATION
+========================= */
 
 function showSection(id) {
 
@@ -1389,9 +1806,13 @@ function showSection(id) {
 
     });
 
-  document
-    .getElementById(id)
-    .classList.add("active");
+  const target = document.getElementById(id);
+
+  if (target) {
+
+    target.classList.add("active");
+
+  }
 
   window.scrollTo({
     top: 0,
@@ -1399,7 +1820,6 @@ function showSection(id) {
   });
 
 }
-
 
 function goHome() {
 
@@ -1421,6 +1841,357 @@ function goHome() {
   });
 
 }
+
+/* =========================
+   LOGIN MODAL
+========================= */
+
+function openLoginModal() {
+
+  const modal =
+    document.getElementById("loginModal");
+
+  const error =
+    document.getElementById("loginError");
+
+  if (error) {
+
+    error.classList.remove("active");
+    error.textContent = "";
+
+  }
+
+  modal.classList.add("active");
+
+  setTimeout(function() {
+
+    document
+      .getElementById("loginEmail")
+      .focus();
+
+  }, 100);
+
+}
+
+function closeLoginModal() {
+
+  document
+    .getElementById("loginModal")
+    .classList.remove("active");
+
+}
+
+function showLoginError(message) {
+
+  const error =
+    document.getElementById("loginError");
+
+  error.textContent = message;
+
+  error.classList.add("active");
+
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+async function handleLogin(event) {
+
+  event.preventDefault();
+
+  if (!supabaseClient) {
+
+    showLoginError(
+      "اتصال سامانه احراز هویت برقرار نشده است. فایل supabase.js را بررسی کنید."
+    );
+
+    return;
+
+  }
+
+  const email =
+    document
+      .getElementById("loginEmail")
+      .value
+      .trim();
+
+  const password =
+    document
+      .getElementById("loginPassword")
+      .value;
+
+  const submitButton =
+    document.getElementById("loginSubmit");
+
+  const errorBox =
+    document.getElementById("loginError");
+
+  errorBox.classList.remove("active");
+  errorBox.textContent = "";
+
+  submitButton.disabled = true;
+  submitButton.textContent = "در حال ورود...";
+
+  try {
+
+    const { data, error } =
+      await supabaseClient.auth.signInWithPassword({
+
+        email: email,
+
+        password: password
+
+      });
+
+    if (error) {
+
+      console.error(
+        "Login error:",
+        error
+      );
+
+      showLoginError(
+        "ایمیل یا رمز عبور صحیح نیست، یا حساب کاربری هنوز فعال نشده است."
+      );
+
+      return;
+
+    }
+
+    if (data && data.user) {
+
+      closeLoginModal();
+
+      updateLoginUI(data.user);
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Unexpected login error:",
+      error
+    );
+
+    showLoginError(
+      "در ارتباط با سامانه خطایی رخ داد. لطفاً دوباره تلاش کنید."
+    );
+
+  } finally {
+
+    submitButton.disabled = false;
+    submitButton.textContent = "ورود";
+
+  }
+
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+async function logoutUser() {
+
+  if (!supabaseClient) {
+    return;
+  }
+
+  try {
+
+    const { error } =
+      await supabaseClient.auth.signOut();
+
+    if (error) {
+
+      console.error(
+        "Logout error:",
+        error
+      );
+
+      return;
+
+    }
+
+    updateLoginUI(null);
+
+    goHome();
+
+  } catch (error) {
+
+    console.error(
+      "Unexpected logout error:",
+      error
+    );
+
+  }
+
+}
+
+/* =========================
+   LOGIN UI
+========================= */
+
+function updateLoginUI(user) {
+
+  const status =
+    document.getElementById("loginStatus");
+
+  const loginButton =
+    document.getElementById("loginButton");
+
+  const logoutButton =
+    document.getElementById("logoutButton");
+
+  if (user) {
+
+    let displayName =
+      user.email || "کاربر سامانه";
+
+    status.textContent =
+      "وارد شده: " + displayName;
+
+    loginButton.style.display = "none";
+
+    logoutButton.style.display = "inline-block";
+
+  } else {
+
+    status.textContent =
+      "برای ورود به بخش‌های اختصاصی سامانه وارد شوید.";
+
+    loginButton.style.display = "inline-block";
+
+    logoutButton.style.display = "none";
+
+  }
+
+}
+
+/* =========================
+   CHECK CURRENT SESSION
+========================= */
+
+async function checkCurrentUser() {
+
+  if (!supabaseClient) {
+
+    updateLoginUI(null);
+
+    return;
+
+  }
+
+  try {
+
+    const {
+      data,
+      error
+    } = await supabaseClient.auth.getSession();
+
+    if (error) {
+
+      console.error(
+        "Session error:",
+        error
+      );
+
+      updateLoginUI(null);
+
+      return;
+
+    }
+
+    if (
+      data &&
+      data.session &&
+      data.session.user
+    ) {
+
+      updateLoginUI(
+        data.session.user
+      );
+
+    } else {
+
+      updateLoginUI(null);
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Session check error:",
+      error
+    );
+
+    updateLoginUI(null);
+
+  }
+
+}
+
+/* =========================
+   AUTH STATE LISTENER
+========================= */
+
+function setupAuthListener() {
+
+  if (!supabaseClient) {
+    return;
+  }
+
+  supabaseClient.auth.onAuthStateChange(
+    function(event, session) {
+
+      if (
+        session &&
+        session.user
+      ) {
+
+        updateLoginUI(
+          session.user
+        );
+
+      } else {
+
+        updateLoginUI(null);
+
+      }
+
+    }
+  );
+
+}
+
+/* =========================
+   CLOSE MODAL BY BACKDROP
+========================= */
+
+document
+  .getElementById("loginModal")
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeLoginModal();
+
+      }
+
+    }
+  );
+
+/* =========================
+   START AUTH SYSTEM
+========================= */
+
+checkCurrentUser();
+
+setupAuthListener();
 
 </script>
 
