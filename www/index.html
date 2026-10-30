@@ -6,411 +6,1460 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7b4aa8">
 <title>دبستان دخترانه علوی اسلامی</title>
+
 <style>
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: Tahoma, Arial, sans-serif;
   background: #f8f4fb;
   color: #33283b;
 }
+
+/* =========================
+   HEADER
+========================= */
+
 .header {
   position: relative;
   overflow: hidden;
-  min-height: 250px;
-  padding: 35px 20px 25px;
+  min-height: 255px;
+  padding: 25px 18px 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg,#74439b,#a66bc1);
+  background: linear-gradient(135deg, #74439b, #a66bc1);
   color: white;
 }
-.diagonal-flag {
+
+/* پرچم ایران به شکل روبان موج‌دار */
+
+.flag-ribbon {
   position: absolute;
-  left: -48px;
-  top: -48px;
-  width: 190px;
-  height: 115px;
-  transform: rotate(-28deg);
-  background: linear-gradient(
-    to bottom,
-    #239f40 0 33%,
-    #fff 33% 66%,
-    #da0000 66% 100%
-  );
-  border-radius: 8px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.2);
-}
-.diagonal-flag::after {
-  content: "الله اکبر";
-  position: absolute;
-  left: 15px;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #da0000;
-  font-size: 11px;
-  font-weight: bold;
-}
-.leaders {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  display: flex;
-  gap: 6px;
+  left: -45px;
+  top: 12px;
+  width: 225px;
+  height: 78px;
+  transform: rotate(-13deg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
   z-index: 3;
 }
+
+.flag-ribbon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #239f40 0%,
+      #239f40 33.33%,
+      #ffffff 33.33%,
+      #ffffff 66.66%,
+      #da0000 66.66%,
+      #da0000 100%
+    );
+
+  clip-path: polygon(
+    0 12%,
+    10% 3%,
+    22% 11%,
+    35% 2%,
+    48% 10%,
+    61% 1%,
+    74% 10%,
+    87% 3%,
+    100% 12%,
+    95% 88%,
+    84% 97%,
+    71% 89%,
+    58% 99%,
+    45% 90%,
+    32% 98%,
+    18% 89%,
+    6% 97%,
+    0 86%
+  );
+}
+
+.flag-ribbon::after {
+  content: "الله اکبر";
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #c51616;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* تصاویر شخصیت‌ها */
+
+.leaders {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+
+  z-index: 4;
+}
+
 .leader-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70px;
 }
+
 .leader {
-  width: 55px;
-  height: 70px;
+  width: 58px;
+  height: 73px;
+
   object-fit: cover;
   object-position: top center;
-  border-radius: 12px 12px 6px 6px;
-  border: 2px solid white;
-  background: #eee;
+
+  border-radius: 14px 14px 8px 8px;
+
+  border: 2px solid rgba(255,255,255,.95);
+
+  background: #eeeeee;
+
+  box-shadow:
+    0 5px 13px rgba(0,0,0,.20);
 }
+
 .leader-name {
-  margin-top: 3px;
+  margin-top: 4px;
+
   font-size: 7px;
+  line-height: 1.3;
+
   color: white;
+
   font-weight: bold;
+
+  text-align: center;
 }
+
+/* عنوان اصلی */
+
 .header-content {
   position: relative;
   z-index: 2;
+
+  padding-top: 72px;
 }
+
 .header h1 {
-  margin: 5px 0;
-  font-size: 25px;
+  margin: 8px 0;
+
+  font-size: 26px;
+  font-weight: bold;
 }
+
 .subtitle {
   margin: 8px 0;
-  font-size: 14px;
-  opacity: .9;
+
+  font-size: 15px;
+
+  opacity: .95;
 }
-.iran {
-  width: 90px;
-  height: 50px;
-  margin: 0 auto 10px;
-  background:
-    linear-gradient(
-      to bottom,
-      #239f40 0 33%,
-      white 33% 66%,
-      #da0000 66%
-    );
-  clip-path: polygon(
-    10% 35%, 20% 20%, 35% 25%, 45% 10%,
-    60% 25%, 75% 20%, 90% 40%, 80% 55%,
-    90% 70%, 70% 75%, 60% 90%, 45% 75%,
-    30% 85%, 20% 65%, 5% 60%
-  );
-}
+
+/* =========================
+   MAIN
+========================= */
+
 .container {
   max-width: 900px;
+
   margin: auto;
+
   padding: 18px;
 }
-.welcome {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 18px;
-  box-shadow: 0 5px 18px rgba(70,40,90,.08);
-}
-.welcome h2 {
-  margin-top: 0;
-  color: #71439a;
-}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+
+  grid-template-columns: repeat(2, 1fr);
+
   gap: 12px;
 }
+
 .card {
   border: 0;
+
   border-radius: 18px;
+
   padding: 18px 12px;
+
   min-height: 110px;
+
   background: white;
-  box-shadow: 0 5px 16px rgba(70,40,90,.08);
+
+  box-shadow:
+    0 5px 16px rgba(70,40,90,.08);
+
   cursor: pointer;
+
   text-align: center;
+
   color: #3e3046;
+
   font-size: 14px;
+
+  transition: .2s;
 }
+
 .card:hover {
   transform: translateY(-2px);
 }
+
 .icon {
   font-size: 30px;
+
   margin-bottom: 8px;
 }
+
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
   display: none;
+
   background: white;
+
   border-radius: 20px;
+
   padding: 20px;
+
   margin-top: 18px;
-  box-shadow: 0 5px 18px rgba(70,40,90,.08);
+
+  box-shadow:
+    0 5px 18px rgba(70,40,90,.08);
 }
+
 .section.active {
   display: block;
 }
+
 .section h2 {
   color: #71439a;
 }
+
 .back {
   border: 0;
+
   border-radius: 12px;
+
   padding: 10px 15px;
+
   background: #eee5f5;
+
   color: #633b84;
+
   cursor: pointer;
 }
+
 .item {
   padding: 14px;
+
   margin: 10px 0;
+
   border-radius: 14px;
+
   background: #faf7fc;
+
   border-right: 4px solid #9b69ba;
 }
-.footer {
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+  padding-top: 8px;
+}
+
+.contact-header {
   text-align: center;
-  padding: 25px;
+  margin: 5px 0 22px;
+}
+
+.contact-header h2 {
+  margin: 0 0 8px;
+  color: #71439a;
+  font-size: 24px;
+}
+
+.contact-header p {
+  margin: 0;
   color: #806e8a;
+  font-size: 13px;
+}
+
+.contact-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 10px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1e7f7;
+  font-size: 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.contact-card {
+  background: #faf7fc;
+  border-radius: 16px;
+  padding: 15px 10px;
+  text-align: center;
+  border: 1px solid #eee4f4;
+}
+
+.contact-card-icon {
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-label {
+  font-size: 11px;
+  color: #806e8a;
+}
+
+.contact-card strong {
+  color: #4b3557;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contact-block {
+  margin-top: 16px;
+}
+
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.block-title span {
+  font-size: 21px;
+}
+
+.block-title h3 {
+  margin: 0;
+  color: #5f3b79;
+  font-size: 16px;
+}
+
+.phone-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: #faf7fc;
+  border: 1px solid #eee4f4;
+  border-radius: 15px;
+  padding: 13px;
+  margin: 8px 0;
+  transition: .2s;
+}
+
+.phone-card:active {
+  transform: scale(.98);
+}
+
+.phone-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #eee3f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.phone-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.phone-info span {
+  color: #806e8a;
+  font-size: 11px;
+}
+
+.phone-info strong {
+  direction: ltr;
+  text-align: right;
+  color: #633b84;
+  font-size: 17px;
+  letter-spacing: .5px;
+}
+
+.phone-arrow {
+  color: #9b69ba;
+  font-size: 22px;
+}
+
+.address-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #faf7fc;
+  border: 1px solid #eee4f4;
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.address-icon {
+  font-size: 27px;
+}
+
+.address-card p {
+  margin: 0;
+  line-height: 2;
+  color: #4b3557;
+  font-size: 14px;
+}
+
+.map-button {
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  margin-top: 10px;
+  padding: 13px;
+  background: linear-gradient(135deg, #74439b, #a66bc1);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.map-button-icon {
+  font-size: 25px;
+}
+
+.map-button span:nth-child(2) {
+  flex: 1;
+  text-align: right;
+}
+
+.map-button strong {
+  display: block;
+  font-size: 14px;
+}
+
+.map-button small {
+  display: block;
+  margin-top: 3px;
+  opacity: .9;
+  font-size: 10px;
+}
+
+.map-arrow {
+  font-size: 22px;
+}
+
+.hours-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f2dc;
+  border: 1px solid #f0e5bf;
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.hours-icon {
+  font-size: 28px;
+}
+
+.hours-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hours-content span {
+  color: #806e8a;
+  font-size: 11px;
+}
+
+.hours-content strong {
+  color: #5a4630;
+  font-size: 15px;
+}
+
+.hours-content b {
+  color: #8b6d2f;
   font-size: 12px;
 }
+
 @media(max-width:520px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    gap: 12px;
+  }
+
+  .contact-card-icon {
+    margin: 0;
+  }
+
+  .contact-card-content {
+    flex: 1;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+
+  padding: 25px;
+
+  color: #806e8a;
+
+  font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:520px) {
+
   .header {
-    min-height: 225px;
+    min-height: 250px;
+
+    padding-left: 12px;
+    padding-right: 12px;
   }
+
   .header h1 {
     font-size: 21px;
   }
+
+  .header-content {
+    padding-top: 78px;
+  }
+
+  .flag-ribbon {
+    left: -60px;
+
+    top: 8px;
+
+    width: 190px;
+
+    height: 65px;
+  }
+
+  .leaders {
+    right: 5px;
+
+    top: 8px;
+
+    gap: 3px;
+  }
+
+  .leader-card {
+    width: 58px;
+  }
+
   .leader {
-    width: 45px;
-    height: 58px;
+    width: 46px;
+
+    height: 59px;
+  }
+
+  .leader-name {
+    font-size: 6px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
 </head>
+
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
-  <div class="diagonal-flag"></div>
+
+  <!-- پرچم ایران به شکل روبان -->
+  <div
+    class="flag-ribbon"
+    aria-label="پرچم ایران">
+  </div>
+
+
+  <!-- تصاویر شخصیت‌ها -->
+
   <div class="leaders">
-<div class="leader-card">
-  <img
-    class="leader"
-    src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
-    alt="امام خمینی">
-  <span class="leader-name">امام خمینی</span>
-</div>
-<div class="leader-card">
-  <img
-    class="leader"
-    src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
-    alt="شهید آیت‌الله خامنه‌ای">
-  <span class="leader-name">شهید آیت‌الله خامنه‌ای</span>
-</div>
-<div class="leader-card">
-  <img
-    class="leader"
-    src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
-    alt="آیت‌الله سید مجتبی خامنه‌ای">
-  <span class="leader-name">آیت‌الله مجتبی خامنه‌ای</span>
-</div>
+
+    <div class="leader-card">
+
+      <img
+        class="leader"
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
+        alt="امام خمینی">
+
+      <span class="leader-name">
+        امام خمینی
+      </span>
+
+    </div>
+
+
+    <div class="leader-card">
+
+      <img
+        class="leader"
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
+        alt="شهید آیت‌الله سید علی خامنه‌ای">
+
+      <span class="leader-name">
+        شهید آیت‌الله سید علی خامنه‌ای
+      </span>
+
+    </div>
+
+
+    <div class="leader-card">
+
+      <img
+        class="leader"
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
+        alt="آیت‌الله سید مجتبی خامنه‌ای">
+
+      <span class="leader-name">
+        آیت‌الله سید مجتبی خامنه‌ای
+      </span>
+
+    </div>
+
   </div>
+
+
+  <!-- عنوان -->
+
   <div class="header-content">
-    <div class="iran"></div>
-    <h1>دبستان دخترانه علوی اسلامی</h1>
-    <div class="subtitle">سامانه ارتباطی مدرسه و خانواده</div>
+
+    <h1>
+      دبستان دخترانه علوی اسلامی
+    </h1>
+
+    <div class="subtitle">
+      سامانه ارتباطی مدرسه و خانواده
+    </div>
+
   </div>
+
 </header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main class="container">
+
   <div id="home">
-<div class="welcome">
-  <h2>🌸 خوش آمدید</h2>
-  <p>
-    به سامانه ارتباطی دبستان دخترانه علوی اسلامی خوش آمدید.
-  </p>
-  <p>
-    اطلاعیه‌ها، برنامه‌های مدرسه، تکالیف و ارتباط با مدرسه
-    در یک مکان.
-  </p>
-</div>
-<div class="grid">
-  <button class="card" onclick="showSection('announcements')">
-    <div class="icon">📢</div>
-    اطلاعیه‌ها
-  </button>
-  <button class="card" onclick="showSection('calendar')">
-    <div class="icon">📅</div>
-    تقویم اجرایی مدرسه
-  </button>
-  <button class="card" onclick="showSection('schedule')">
-    <div class="icon">🗓️</div>
-    برنامه هفتگی
-  </button>
-  <button class="card" onclick="showSection('homework')">
-    <div class="icon">📚</div>
-    تکالیف و آموزش
-  </button>
-  <button class="card" onclick="showSection('management')">
-    <div class="icon">💬</div>
-    ارتباط با مدیریت
-  </button>
-  <button class="card" onclick="showSection('pta')">
-    <div class="icon">👩‍👩‍👧</div>
-    انجمن اولیا و مربیان
-  </button>
-  <button class="card" onclick="showSection('feedback')">
-    <div class="icon">💡</div>
-    انتقادات و پیشنهادات
-  </button>
-  <button class="card" onclick="showSection('polls')">
-    <div class="icon">📊</div>
-    نظرسنجی‌ها
-  </button>
-  <button class="card" onclick="showSection('gallery')">
-    <div class="icon">🖼️</div>
-    گالری
-  </button>
-  <button class="card" onclick="showSection('contact')">
-    <div class="icon">☎️</div>
-    تماس با مدرسه
-  </button>
-</div>
+
+    <!-- خوش‌آمدگویی تکراری حذف شد -->
+
+    <div class="grid">
+
+      <button
+        class="card"
+        onclick="showSection('announcements')">
+
+        <div class="icon">📢</div>
+
+        اطلاعیه‌ها
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('calendar')">
+
+        <div class="icon">📅</div>
+
+        تقویم اجرایی مدرسه
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('schedule')">
+
+        <div class="icon">🗓️</div>
+
+        برنامه هفتگی
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('homework')">
+
+        <div class="icon">📚</div>
+
+        تکالیف و آموزش
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('management')">
+
+        <div class="icon">💬</div>
+
+        ارتباط با مدیریت
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('pta')">
+
+        <div class="icon">👩‍👩‍👧</div>
+
+        انجمن اولیا و مربیان
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('feedback')">
+
+        <div class="icon">💡</div>
+
+        انتقادات و پیشنهادات
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('polls')">
+
+        <div class="icon">📊</div>
+
+        نظرسنجی‌ها
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('gallery')">
+
+        <div class="icon">🖼️</div>
+
+        گالری
+
+      </button>
+
+
+      <button
+        class="card"
+        onclick="showSection('contact')">
+
+        <div class="icon">☎️</div>
+
+        تماس با مدرسه
+
+      </button>
+
+    </div>
+
   </div>
-  <section id="announcements" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>📢 اطلاعیه‌های مدرسه</h2>
-<div class="item">
-  <strong>اطلاعیه جدید</strong>
-  <p>اطلاعیه‌های رسمی مدرسه در این بخش نمایش داده خواهد شد.</p>
-</div>
+
+
+  <!-- =========================
+       ANNOUNCEMENTS
+  ========================= -->
+
+  <section
+    id="announcements"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      📢 اطلاعیه‌های مدرسه
+    </h2>
+
+    <div class="item">
+
+      <strong>
+        اطلاعیه جدید
+      </strong>
+
+      <p>
+        اطلاعیه‌های رسمی مدرسه در این بخش نمایش داده خواهد شد.
+      </p>
+
+    </div>
+
   </section>
-  <section id="calendar" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>📅 تقویم اجرایی مدرسه</h2>
-<div class="item">
-  <strong>برنامه‌های اجرایی ماه</strong>
-  <p>برنامه‌های مدرسه بر اساس تاریخ و پایه در این بخش نمایش داده می‌شوند.</p>
-</div>
+
+
+  <!-- =========================
+       CALENDAR
+  ========================= -->
+
+  <section
+    id="calendar"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      📅 تقویم اجرایی مدرسه
+    </h2>
+
+    <div class="item">
+
+      <strong>
+        برنامه‌های اجرایی ماه
+      </strong>
+
+      <p>
+        برنامه‌های مدرسه بر اساس تاریخ و پایه در این بخش نمایش داده می‌شوند.
+      </p>
+
+    </div>
+
   </section>
-  <section id="schedule" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>🗓️ برنامه هفتگی کلاس‌ها</h2>
-<div class="item">
-  پایه اول
-</div>
-<div class="item">
-  پایه دوم
-</div>
-<div class="item">
-  پایه سوم
-</div>
-<div class="item">
-  پایه چهارم
-</div>
-<div class="item">
-  پایه پنجم
-</div>
-<div class="item">
-  پایه ششم
-</div>
+
+
+  <!-- =========================
+       WEEKLY SCHEDULE
+  ========================= -->
+
+  <section
+    id="schedule"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      🗓️ برنامه هفتگی کلاس‌ها
+    </h2>
+
+    <div class="item">
+      پایه اول
+    </div>
+
+    <div class="item">
+      پایه دوم
+    </div>
+
+    <div class="item">
+      پایه سوم
+    </div>
+
+    <div class="item">
+      پایه چهارم
+    </div>
+
+    <div class="item">
+      پایه پنجم
+    </div>
+
+    <div class="item">
+      پایه ششم
+    </div>
+
   </section>
-  <section id="homework" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>📚 تکالیف و برنامه‌های آموزشی</h2>
-<div class="item">
-  تکالیف دانش‌آموزان در این بخش قرار خواهد گرفت.
-</div>
+
+
+  <!-- =========================
+       HOMEWORK
+  ========================= -->
+
+  <section
+    id="homework"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      📚 تکالیف و برنامه‌های آموزشی
+    </h2>
+
+    <div class="item">
+
+      تکالیف دانش‌آموزان در این بخش قرار خواهد گرفت.
+
+    </div>
+
   </section>
-  <section id="management" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>💬 ارتباط با مدیریت</h2>
-<div class="item">
-  امکان ارسال پیام مستقیم به مدیریت مدرسه در این بخش قرار خواهد گرفت.
-</div>
+
+
+  <!-- =========================
+       MANAGEMENT
+  ========================= -->
+
+  <section
+    id="management"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      💬 ارتباط با مدیریت
+    </h2>
+
+    <div class="item">
+
+      امکان ارسال پیام مستقیم به مدیریت مدرسه در این بخش قرار خواهد گرفت.
+
+    </div>
+
   </section>
-  <section id="pta" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>👩‍👩‍👧 انجمن اولیا و مربیان</h2>
-<div class="item">
-  اخبار و فعالیت‌های انجمن اولیا و مربیان.
-</div>
+
+
+  <!-- =========================
+       PTA
+  ========================= -->
+
+  <section
+    id="pta"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      👩‍👩‍👧 انجمن اولیا و مربیان
+    </h2>
+
+    <div class="item">
+
+      اخبار و فعالیت‌های انجمن اولیا و مربیان.
+
+    </div>
+
   </section>
-  <section id="feedback" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>💡 انتقادات و پیشنهادات</h2>
-<div class="item">
-  والدین می‌توانند پیشنهادها و انتقادات خود را ثبت کنند.
-</div>
+
+
+  <!-- =========================
+       FEEDBACK
+  ========================= -->
+
+  <section
+    id="feedback"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      💡 انتقادات و پیشنهادات
+    </h2>
+
+    <div class="item">
+
+      والدین می‌توانند پیشنهادها و انتقادات خود را ثبت کنند.
+
+    </div>
+
   </section>
-  <section id="polls" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>📊 نظرسنجی‌ها</h2>
-<div class="item">
-  نظرسنجی‌های فعال مدرسه در این بخش نمایش داده خواهد شد.
-</div>
+
+
+  <!-- =========================
+       POLLS
+  ========================= -->
+
+  <section
+    id="polls"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      📊 نظرسنجی‌ها
+    </h2>
+
+    <div class="item">
+
+      نظرسنجی‌های فعال مدرسه در این بخش نمایش داده خواهد شد.
+
+    </div>
+
   </section>
-  <section id="gallery" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>🖼️ گالری مدرسه</h2>
-<div class="item">
-  تصاویر برنامه‌ها و فعالیت‌های مدرسه.
-</div>
+
+
+  <!-- =========================
+       GALLERY
+  ========================= -->
+
+  <section
+    id="gallery"
+    class="section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <h2>
+      🖼️ گالری مدرسه
+    </h2>
+
+    <div class="item">
+
+      تصاویر برنامه‌ها و فعالیت‌های مدرسه.
+
+    </div>
+
   </section>
-  <section id="contact" class="section">
-    <button class="back" onclick="goHome()">← بازگشت</button>
-    <h2>☎️ تماس با مدرسه</h2>
-<div class="item">
-  اطلاعات تماس مدرسه در این بخش قرار خواهد گرفت.
-</div>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section
+    id="contact"
+    class="section contact-section">
+
+    <button
+      class="back"
+      onclick="goHome()">
+
+      ← بازگشت
+
+    </button>
+
+    <div class="contact-header">
+
+      <div class="contact-icon">
+        ☎️
+      </div>
+
+      <h2>
+        تماس با مدرسه
+      </h2>
+
+      <p>
+        راه‌های ارتباطی با دبستان دخترانه علوی اسلامی
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <div class="contact-card-icon">
+          👩‍💼
+        </div>
+
+        <div class="contact-card-content">
+
+          <span class="contact-label">
+            مدیریت مدرسه
+          </span>
+
+          <strong>
+            سرکارخانم اصغری منش
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="contact-card-icon">
+          👩‍🏫
+        </div>
+
+        <div class="contact-card-content">
+
+          <span class="contact-label">
+            معاون آموزشی
+          </span>
+
+          <strong>
+            سرکار خانم رستگار
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="contact-card-icon">
+          🌱
+        </div>
+
+        <div class="contact-card-content">
+
+          <span class="contact-label">
+            معاون پرورشی
+          </span>
+
+          <strong>
+            سرکار خانم توسلی
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="contact-block">
+
+      <div class="block-title">
+
+        <span>📞</span>
+
+        <h3>
+          شماره‌های تماس
+        </h3>
+
+      </div>
+
+
+      <a
+        class="phone-card"
+        href="tel:02133440505">
+
+        <div class="phone-icon">
+          ☎️
+        </div>
+
+        <div class="phone-info">
+
+          <span>
+            تلفن مدرسه
+          </span>
+
+          <strong>
+            02133440505
+          </strong>
+
+        </div>
+
+        <div class="phone-arrow">
+          ←
+        </div>
+
+      </a>
+
+
+      <a
+        class="phone-card"
+        href="tel:02133562687">
+
+        <div class="phone-icon">
+          ☎️
+        </div>
+
+        <div class="phone-info">
+
+          <span>
+            تلفن مدرسه
+          </span>
+
+          <strong>
+            02133562687
+          </strong>
+
+        </div>
+
+        <div class="phone-arrow">
+          ←
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <div class="contact-block">
+
+      <div class="block-title">
+
+        <span>📍</span>
+
+        <h3>
+          نشانی مدرسه
+        </h3>
+
+      </div>
+
+
+      <div class="address-card">
+
+        <div class="address-icon">
+          🏫
+        </div>
+
+        <p>
+          خیابان ایران- خیابان شهید قادری- پلاک ۶۱
+        </p>
+
+      </div>
+
+
+      <a
+        class="map-button"
+        href="https://nshn.ir/ac_bvEaFIxu1Qk"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <span class="map-button-icon">
+          🗺️
+        </span>
+
+        <span>
+
+          <strong>
+            مسیریابی تا مدرسه
+          </strong>
+
+          <small>
+            مشاهده مسیر در نشان
+          </small>
+
+        </span>
+
+        <span class="map-arrow">
+          ←
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="contact-block">
+
+      <div class="block-title">
+
+        <span>🕐</span>
+
+        <h3>
+          ساعات پاسخگویی
+        </h3>
+
+      </div>
+
+
+      <div class="hours-card">
+
+        <div class="hours-icon">
+          ⏰
+        </div>
+
+        <div class="hours-content">
+
+          <span>
+            زمان پاسخگویی مدرسه
+          </span>
+
+          <strong>
+            ۸ صبح الی ۱۳
+          </strong>
+
+          <b>
+            لطفاً در این ساعات با مدرسه تماس بگیرید.
+          </b>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
+
 </main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
+
   دبستان دخترانه علوی اسلامی
+
   <br>
-  <small>سامانه ارتباطی مدرسه و خانواده</small>
+
+  <small>
+    سامانه ارتباطی مدرسه و خانواده
+  </small>
+
 </footer>
+
+
 <script>
+
 function showSection(id) {
-  document.getElementById("home").style.display = "none";
-  document.querySelectorAll(".section")
+
+  document
+    .getElementById("home")
+    .style.display = "none";
+
+  document
+    .querySelectorAll(".section")
     .forEach(function(section) {
+
       section.classList.remove("active");
+
     });
-  document.getElementById(id)
+
+  document
+    .getElementById(id)
     .classList.add("active");
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
+
+
 function goHome() {
-  document.querySelectorAll(".section")
+
+  document
+    .querySelectorAll(".section")
     .forEach(function(section) {
+
       section.classList.remove("active");
+
     });
-  document.getElementById("home").style.display = "block";
+
+  document
+    .getElementById("home")
+    .style.display = "block";
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
+
 </script>
+
 </body>
 </html>
