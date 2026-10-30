@@ -2,9 +2,6 @@
 <html lang="fa" dir="rtl">
 <head>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7b4aa8">
@@ -43,7 +40,6 @@ body {
   position: relative;
   width: 100%;
   height: 255px;
-
   background-image: url("https://tarsimdg.com/wp-content/uploads/2026/02/25594725-a561-4fc1-a9ad-1e548a850567_11zon.webp");
   background-size: cover;
   background-position: center center;
@@ -54,11 +50,9 @@ body {
   position: absolute;
   right: 14px;
   top: 14px;
-
   display: flex;
   gap: 9px;
   align-items: flex-start;
-
   z-index: 4;
 }
 
@@ -72,85 +66,53 @@ body {
 .leader {
   width: 58px;
   height: 73px;
-
   object-fit: cover;
   object-position: top center;
-
   border-radius: 14px 14px 8px 8px;
-
   border: 2px solid rgba(255,255,255,.95);
-
   background: #eeeeee;
-
-  box-shadow:
-    0 5px 13px rgba(0,0,0,.20);
+  box-shadow: 0 5px 13px rgba(0,0,0,.20);
 }
 
 .leader-name {
   margin-top: 4px;
-
   font-size: 7px;
   line-height: 1.3;
-
   color: white;
-
   font-weight: bold;
-
   text-align: center;
-
-  text-shadow:
-    0 1px 3px rgba(0,0,0,.8);
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
 }
-
-/* =========================
-   HEADER SECOND
-========================= */
 
 .header-second {
   width: 100%;
-
   min-height: 78px;
-
-  background: linear-gradient(
-    135deg,
-    #74439b,
-    #a66bc1
-  );
-
+  background: linear-gradient(135deg,#74439b,#a66bc1);
   color: white;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 10px 15px;
-
   text-align: center;
 }
 
 .header-second h1 {
   margin: 0 0 7px;
-
   font-size: 23px;
-
   font-weight: bold;
-
   line-height: 1.4;
 }
 
 .header-second .subtitle {
   margin: 0;
-
   font-size: 14px;
-
   opacity: .95;
-
   line-height: 1.5;
 }
 
 /* =========================
-   LOGIN AREA
+   LOGIN
 ========================= */
 
 .login-bar {
@@ -159,12 +121,10 @@ body {
   padding: 10px 15px;
   border-bottom: 1px solid #eee4f4;
   box-shadow: 0 2px 8px rgba(70,40,90,.05);
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   min-height: 58px;
 }
 
@@ -175,33 +135,21 @@ body {
 
 .login-button,
 .logout-button {
-
   border: 0;
   border-radius: 12px;
-
   padding: 10px 18px;
-
   font-family: inherit;
   font-size: 13px;
-
   cursor: pointer;
-
   transition: .2s;
 }
 
 .login-button {
-
-  background: linear-gradient(
-    135deg,
-    #74439b,
-    #a66bc1
-  );
-
+  background: linear-gradient(135deg,#74439b,#a66bc1);
   color: white;
 }
 
 .logout-button {
-
   background: #eee5f5;
   color: #633b84;
 }
@@ -216,19 +164,12 @@ body {
 ========================= */
 
 .login-modal {
-
   display: none;
-
   position: fixed;
-
   inset: 0;
-
   background: rgba(30,20,35,.55);
-
   z-index: 9999;
-
   padding: 20px;
-
   align-items: center;
   justify-content: center;
 }
@@ -238,137 +179,84 @@ body {
 }
 
 .login-box {
-
   width: 100%;
   max-width: 390px;
-
   background: white;
-
   border-radius: 22px;
-
   padding: 25px 20px;
-
-  box-shadow:
-    0 15px 50px rgba(0,0,0,.25);
-
+  box-shadow: 0 15px 50px rgba(0,0,0,.25);
   text-align: right;
 }
 
 .login-box-icon {
-
   width: 62px;
   height: 62px;
-
   margin: 0 auto 12px;
-
   border-radius: 20px;
-
   background: #f1e7f7;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 31px;
-
   text-align: center;
 }
 
 .login-box h2 {
-
   text-align: center;
-
   margin: 0 0 7px;
-
   color: #71439a;
-
   font-size: 21px;
 }
 
 .login-box-subtitle {
-
   text-align: center;
-
   margin: 0 0 20px;
-
   color: #806e8a;
-
   font-size: 12px;
-
   line-height: 1.8;
 }
 
 .login-field {
-
   margin-bottom: 14px;
 }
 
 .login-field label {
-
   display: block;
-
   margin-bottom: 6px;
-
   color: #5f3b79;
-
   font-size: 12px;
-
   font-weight: bold;
 }
 
 .login-field input {
-
   width: 100%;
-
   padding: 13px 12px;
-
   border: 1px solid #e2d5e8;
-
   border-radius: 13px;
-
   background: #faf7fc;
-
   color: #33283b;
-
   font-family: inherit;
-
   font-size: 14px;
-
   outline: none;
-
   direction: ltr;
-
   text-align: left;
 }
 
 .login-field input:focus {
-
   border-color: #9b69ba;
-
-  box-shadow:
-    0 0 0 3px rgba(155,105,186,.10);
+  box-shadow: 0 0 0 3px rgba(155,105,186,.10);
 }
 
 .login-error {
-
   display: none;
-
   background: #fff0f0;
-
   border: 1px solid #f0cccc;
-
   color: #a33a3a;
-
   border-radius: 12px;
-
   padding: 10px;
-
   margin-bottom: 12px;
-
   font-size: 11px;
-
   line-height: 1.8;
-
   text-align: center;
 }
 
@@ -377,107 +265,62 @@ body {
 }
 
 .login-submit {
-
   width: 100%;
-
   border: 0;
-
   border-radius: 14px;
-
   padding: 13px;
-
-  background: linear-gradient(
-    135deg,
-    #74439b,
-    #a66bc1
-  );
-
+  background: linear-gradient(135deg,#74439b,#a66bc1);
   color: white;
-
   font-family: inherit;
-
   font-size: 14px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
 .login-submit:disabled {
-
   opacity: .65;
-
   cursor: wait;
 }
 
 .login-close {
-
   width: 100%;
-
   margin-top: 9px;
-
   border: 0;
-
   background: transparent;
-
   color: #806e8a;
-
   padding: 9px;
-
   font-family: inherit;
-
   font-size: 12px;
-
   cursor: pointer;
 }
 
 /* =========================
-   ADMIN DASHBOARD
+   ADMIN
 ========================= */
 
 .admin-dashboard-card {
   display: none;
   grid-column: 1 / -1;
-
   border: 0;
   border-radius: 20px;
-
   padding: 20px;
-
   min-height: 135px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #4d2868,
-      #8f5aad
-    );
-
-  box-shadow:
-    0 8px 22px rgba(70,40,90,.18);
-
+  background: linear-gradient(135deg,#4d2868,#8f5aad);
+  box-shadow: 0 8px 22px rgba(70,40,90,.18);
   cursor: pointer;
-
   text-align: right;
-
   color: white;
-
   transition: .2s;
-
   position: relative;
   overflow: hidden;
 }
 
 .admin-dashboard-card::after {
   content: "⚙️";
-
   position: absolute;
-
   left: 18px;
   bottom: -5px;
-
   font-size: 70px;
-
   opacity: .10;
 }
 
@@ -503,28 +346,13 @@ body {
   line-height: 1.8;
 }
 
-/* =========================
-   ADMIN DASHBOARD SECTION
-========================= */
-
 .admin-header {
-  background:
-    linear-gradient(
-      135deg,
-      #4d2868,
-      #8f5aad
-    );
-
+  background: linear-gradient(135deg,#4d2868,#8f5aad);
   color: white;
-
   border-radius: 18px;
-
   padding: 20px;
-
   margin: 15px 0 18px;
-
-  box-shadow:
-    0 7px 18px rgba(70,40,90,.15);
+  box-shadow: 0 7px 18px rgba(70,40,90,.15);
 }
 
 .admin-header-icon {
@@ -546,123 +374,76 @@ body {
 
 .admin-role-badge {
   display: inline-block;
-
   margin-top: 12px;
-
   padding: 6px 12px;
-
   border-radius: 20px;
-
   background: rgba(255,255,255,.15);
-
   font-size: 11px;
 }
 
 .admin-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 11px;
 }
 
 .admin-item {
   border: 1px solid #eee4f4;
-
   background: #faf7fc;
-
   border-radius: 17px;
-
   padding: 17px 12px;
-
   min-height: 115px;
-
   cursor: pointer;
-
   text-align: center;
-
   color: #4b3557;
-
   font-family: inherit;
-
   transition: .2s;
 }
 
 .admin-item:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 5px 15px rgba(70,40,90,.08);
+  box-shadow: 0 5px 15px rgba(70,40,90,.08);
 }
 
 .admin-item-icon {
   font-size: 29px;
-
   margin-bottom: 8px;
 }
 
 .admin-item strong {
   display: block;
-
   color: #5f3b79;
-
   font-size: 13px;
-
   margin-bottom: 5px;
 }
 
 .admin-item small {
   display: block;
-
   color: #806e8a;
-
   font-size: 10px;
-
   line-height: 1.6;
 }
 
 .admin-security {
   margin-top: 16px;
-
   padding: 13px 14px;
-
   border-radius: 14px;
-
   background: #f9f2dc;
-
   border: 1px solid #f0e5bf;
-
   color: #67542e;
-
   font-size: 11px;
-
   line-height: 1.9;
 }
 
 .admin-user-info {
   margin-top: 12px;
-
   padding: 12px;
-
   border-radius: 13px;
-
   background: rgba(255,255,255,.10);
-
   font-size: 11px;
-
   direction: ltr;
-
   text-align: left;
-
   word-break: break-word;
-}
-
-@media(max-width:520px) {
-
-  .admin-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
 }
 
 /* =========================
@@ -671,42 +452,27 @@ body {
 
 .container {
   max-width: 900px;
-
   margin: auto;
-
   padding: 18px;
 }
 
 .grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 12px;
 }
 
 .card {
   border: 0;
-
   border-radius: 18px;
-
   padding: 18px 12px;
-
   min-height: 110px;
-
   background: white;
-
-  box-shadow:
-    0 5px 16px rgba(70,40,90,.08);
-
+  box-shadow: 0 5px 16px rgba(70,40,90,.08);
   cursor: pointer;
-
   text-align: center;
-
   color: #3e3046;
-
   font-size: 14px;
-
   transition: .2s;
 }
 
@@ -716,7 +482,6 @@ body {
 
 .icon {
   font-size: 30px;
-
   margin-bottom: 8px;
 }
 
@@ -726,17 +491,11 @@ body {
 
 .section {
   display: none;
-
   background: white;
-
   border-radius: 20px;
-
   padding: 20px;
-
   margin-top: 18px;
-
-  box-shadow:
-    0 5px 18px rgba(70,40,90,.08);
+  box-shadow: 0 5px 18px rgba(70,40,90,.08);
 }
 
 .section.active {
@@ -749,27 +508,18 @@ body {
 
 .back {
   border: 0;
-
   border-radius: 12px;
-
   padding: 10px 15px;
-
   background: #eee5f5;
-
   color: #633b84;
-
   cursor: pointer;
 }
 
 .item {
   padding: 14px;
-
   margin: 10px 0;
-
   border-radius: 14px;
-
   background: #faf7fc;
-
   border-right: 4px solid #9b69ba;
 }
 
@@ -949,7 +699,7 @@ body {
   border-radius: 16px;
   margin-top: 10px;
   padding: 13px;
-  background: linear-gradient(135deg, #74439b, #a66bc1);
+  background: linear-gradient(135deg,#74439b,#a66bc1);
   color: white;
   display: flex;
   align-items: center;
@@ -1018,39 +768,14 @@ body {
   font-size: 12px;
 }
 
-@media(max-width:520px) {
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card {
-    display: flex;
-    align-items: center;
-    text-align: right;
-    gap: 12px;
-  }
-
-  .contact-card-icon {
-    margin: 0;
-  }
-
-  .contact-card-content {
-    flex: 1;
-  }
-}
-
 /* =========================
    FOOTER
 ========================= */
 
 .footer {
   text-align: center;
-
   padding: 25px;
-
   color: #806e8a;
-
   font-size: 12px;
 }
 
@@ -1119,16 +844,34 @@ body {
     font-size: 11px;
   }
 
+  .admin-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    gap: 12px;
+  }
+
+  .contact-card-icon {
+    margin: 0;
+  }
+
+  .contact-card-content {
+    flex: 1;
+  }
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header class="header">
 
@@ -1137,42 +880,27 @@ body {
     <div class="leaders">
 
       <div class="leader-card">
-
         <img
           class="leader"
           src="https://commons.wikimedia.org/wiki/Special:FilePath/Imam%20Khomeini%20Potrait.jpg"
           alt="امام خمینی">
-
-        <span class="leader-name">
-          امام خمینی
-        </span>
-
+        <span class="leader-name">امام خمینی</span>
       </div>
 
       <div class="leader-card">
-
         <img
           class="leader"
           src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Ali%20Khamenei.jpg"
           alt="شهید آیت‌الله سید علی خامنه‌ای">
-
-        <span class="leader-name">
-          شهید آیت‌الله سید علی خامنه‌ای
-        </span>
-
+        <span class="leader-name">شهید آیت‌الله سید علی خامنه‌ای</span>
       </div>
 
       <div class="leader-card">
-
         <img
           class="leader"
           src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Mojtaba%20Khamenei.jpg"
           alt="آیت‌الله سید مجتبی خامنه‌ای">
-
-        <span class="leader-name">
-          آیت‌الله سید مجتبی خامنه‌ای
-        </span>
-
+        <span class="leader-name">آیت‌الله سید مجتبی خامنه‌ای</span>
       </div>
 
     </div>
@@ -1180,40 +908,23 @@ body {
   </div>
 
   <div class="header-second">
-
-    <h1>
-      دبستان دخترانه علوی اسلامی
-    </h1>
-
-    <div class="subtitle">
-      سامانه ارتباطی مدرسه و خانواده
-    </div>
-
+    <h1>دبستان دخترانه علوی اسلامی</h1>
+    <div class="subtitle">سامانه ارتباطی مدرسه و خانواده</div>
   </div>
 
 </header>
 
-<!-- =========================
-     LOGIN BAR
-========================= -->
-
 <div class="login-bar">
 
-  <span
-    id="loginStatus"
-    class="login-status">
-
+  <span id="loginStatus" class="login-status">
     برای ورود به بخش‌های اختصاصی سامانه وارد شوید.
-
   </span>
 
   <button
     id="loginButton"
     class="login-button"
     onclick="openLoginModal()">
-
     🔐 ورود به سامانه
-
   </button>
 
   <button
@@ -1221,49 +932,29 @@ body {
     class="logout-button"
     onclick="logoutUser()"
     style="display:none;">
-
     خروج
-
   </button>
 
 </div>
 
-<!-- =========================
-     LOGIN MODAL
-========================= -->
-
-<div
-  id="loginModal"
-  class="login-modal">
+<div id="loginModal" class="login-modal">
 
   <div class="login-box">
 
-    <div class="login-box-icon">
-      🔐
-    </div>
+    <div class="login-box-icon">🔐</div>
 
-    <h2>
-      ورود به سامانه
-    </h2>
+    <h2>ورود به سامانه</h2>
 
     <p class="login-box-subtitle">
       برای ورود، ایمیل و رمز عبور حساب کاربری خود را وارد کنید.
     </p>
 
-    <div
-      id="loginError"
-      class="login-error">
-    </div>
+    <div id="loginError" class="login-error"></div>
 
-    <form
-      id="loginForm"
-      onsubmit="handleLogin(event)">
+    <form id="loginForm" onsubmit="handleLogin(event)">
 
       <div class="login-field">
-
-        <label for="loginEmail">
-          ایمیل
-        </label>
+        <label for="loginEmail">ایمیل</label>
 
         <input
           id="loginEmail"
@@ -1271,14 +962,10 @@ body {
           autocomplete="email"
           placeholder="ایمیل خود را وارد کنید"
           required>
-
       </div>
 
       <div class="login-field">
-
-        <label for="loginPassword">
-          رمز عبور
-        </label>
+        <label for="loginPassword">رمز عبور</label>
 
         <input
           id="loginPassword"
@@ -1286,16 +973,13 @@ body {
           autocomplete="current-password"
           placeholder="رمز عبور"
           required>
-
       </div>
 
       <button
         id="loginSubmit"
         class="login-submit"
         type="submit">
-
         ورود
-
       </button>
 
     </form>
@@ -1303,18 +987,12 @@ body {
     <button
       class="login-close"
       onclick="closeLoginModal()">
-
       انصراف
-
     </button>
 
   </div>
 
 </div>
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <main class="container">
 
@@ -1322,22 +1000,14 @@ body {
 
     <div class="grid">
 
-      <!-- ADMIN DASHBOARD
-           فقط برای super_admin نمایش داده می‌شود
-      -->
-
       <button
         id="adminDashboardCard"
         class="admin-dashboard-card"
         onclick="showSection('adminDashboard')">
 
-        <div class="admin-icon">
-          👑
-        </div>
+        <div class="admin-icon">👑</div>
 
-        <strong>
-          داشبورد مدیریت ارشد
-        </strong>
+        <strong>داشبورد مدیریت ارشد</strong>
 
         <span>
           مدیریت کاربران، محتوا، نقش‌ها، دسترسی‌ها و بخش‌های سامانه
@@ -1345,135 +1015,69 @@ body {
 
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('announcements')">
-
+      <button class="card" onclick="showSection('announcements')">
         <div class="icon">📢</div>
-
         اطلاعیه‌ها
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('calendar')">
-
+      <button class="card" onclick="showSection('calendar')">
         <div class="icon">📅</div>
-
         تقویم اجرایی مدرسه
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('schedule')">
-
+      <button class="card" onclick="showSection('schedule')">
         <div class="icon">🗓️</div>
-
         برنامه هفتگی
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('homework')">
-
+      <button class="card" onclick="showSection('homework')">
         <div class="icon">📚</div>
-
         تکالیف و آموزش
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('management')">
-
+      <button class="card" onclick="showSection('management')">
         <div class="icon">💬</div>
-
         ارتباط با مدیریت
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('pta')">
-
+      <button class="card" onclick="showSection('pta')">
         <div class="icon">👩‍👩‍👧</div>
-
         انجمن اولیا و مربیان
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('feedback')">
-
+      <button class="card" onclick="showSection('feedback')">
         <div class="icon">💡</div>
-
         انتقادات و پیشنهادات
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('polls')">
-
+      <button class="card" onclick="showSection('polls')">
         <div class="icon">📊</div>
-
         نظرسنجی‌ها
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('gallery')">
-
+      <button class="card" onclick="showSection('gallery')">
         <div class="icon">🖼️</div>
-
         گالری
-
       </button>
 
-      <button
-        class="card"
-        onclick="showSection('contact')">
-
+      <button class="card" onclick="showSection('contact')">
         <div class="icon">☎️</div>
-
         تماس با مدرسه
-
       </button>
 
     </div>
 
   </div>
 
-  <!-- =========================
-       ADMIN DASHBOARD
-  ========================= -->
+  <section id="adminDashboard" class="section">
 
-  <section
-    id="adminDashboard"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
+    <button class="back" onclick="goHome()">← بازگشت</button>
 
     <div class="admin-header">
 
-      <div class="admin-header-icon">
-        👑
-      </div>
+      <div class="admin-header-icon">👑</div>
 
-      <h3>
-        داشبورد مدیریت ارشد
-      </h3>
+      <h3>داشبورد مدیریت ارشد</h3>
 
       <p>
         این بخش مخصوص مدیر ارشد و مالک سامانه است.
@@ -1484,9 +1088,7 @@ body {
         نقش: مدیر ارشد سامانه — Super Admin
       </span>
 
-      <div
-        id="adminUserInfo"
-        class="admin-user-info">
+      <div id="adminUserInfo" class="admin-user-info">
         در حال دریافت اطلاعات حساب...
       </div>
 
@@ -1494,608 +1096,191 @@ body {
 
     <div class="admin-grid">
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('مدیریت کاربران')">
-
-        <div class="admin-item-icon">
-          👥
-        </div>
-
-        <strong>
-          مدیریت کاربران
-        </strong>
-
-        <small>
-          ایجاد، فعال‌سازی و مدیریت کاربران مدرسه
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('مدیریت کاربران')">
+        <div class="admin-item-icon">👥</div>
+        <strong>مدیریت کاربران</strong>
+        <small>ایجاد، فعال‌سازی و مدیریت کاربران مدرسه</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('نقش‌ها و دسترسی‌ها')">
-
-        <div class="admin-item-icon">
-          🔐
-        </div>
-
-        <strong>
-          نقش‌ها و دسترسی‌ها
-        </strong>
-
-        <small>
-          مدیریت سطح دسترسی مدیر، معلم، والد و انجمن
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('نقش‌ها و دسترسی‌ها')">
+        <div class="admin-item-icon">🔐</div>
+        <strong>نقش‌ها و دسترسی‌ها</strong>
+        <small>مدیریت سطح دسترسی مدیر، معلم، والد و انجمن</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('اطلاعیه‌ها')">
-
-        <div class="admin-item-icon">
-          📢
-        </div>
-
-        <strong>
-          مدیریت اطلاعیه‌ها
-        </strong>
-
-        <small>
-          ایجاد، ویرایش و انتشار اطلاعیه‌های مدرسه
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('اطلاعیه‌ها')">
+        <div class="admin-item-icon">📢</div>
+        <strong>مدیریت اطلاعیه‌ها</strong>
+        <small>ایجاد، ویرایش و انتشار اطلاعیه‌های مدرسه</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('تقویم اجرایی')">
-
-        <div class="admin-item-icon">
-          📅
-        </div>
-
-        <strong>
-          تقویم اجرایی
-        </strong>
-
-        <small>
-          برنامه‌های مدرسه بر اساس تاریخ و پایه
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('تقویم اجرایی')">
+        <div class="admin-item-icon">📅</div>
+        <strong>تقویم اجرایی</strong>
+        <small>برنامه‌های مدرسه بر اساس تاریخ و پایه</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('برنامه هفتگی')">
-
-        <div class="admin-item-icon">
-          🗓️
-        </div>
-
-        <strong>
-          برنامه هفتگی
-        </strong>
-
-        <small>
-          مدیریت برنامه کلاس‌های پایه اول تا ششم
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('برنامه هفتگی')">
+        <div class="admin-item-icon">🗓️</div>
+        <strong>برنامه هفتگی</strong>
+        <small>مدیریت برنامه کلاس‌های پایه اول تا ششم</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('تکالیف و آموزش')">
-
-        <div class="admin-item-icon">
-          📚
-        </div>
-
-        <strong>
-          تکالیف و آموزش
-        </strong>
-
-        <small>
-          مدیریت تکالیف بر اساس پایه و کلاس
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('تکالیف و آموزش')">
+        <div class="admin-item-icon">📚</div>
+        <strong>تکالیف و آموزش</strong>
+        <small>مدیریت تکالیف بر اساس پایه و کلاس</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('دانش‌آموزان و کلاس‌ها')">
-
-        <div class="admin-item-icon">
-          👧
-        </div>
-
-        <strong>
-          دانش‌آموزان و کلاس‌ها
-        </strong>
-
-        <small>
-          مدیریت پایه، کلاس و ارتباط والد با دانش‌آموز
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('دانش‌آموزان و کلاس‌ها')">
+        <div class="admin-item-icon">👧</div>
+        <strong>دانش‌آموزان و کلاس‌ها</strong>
+        <small>مدیریت پایه، کلاس و ارتباط والد با دانش‌آموز</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('معلمان')">
-
-        <div class="admin-item-icon">
-          👩‍🏫
-        </div>
-
-        <strong>
-          مدیریت معلمان
-        </strong>
-
-        <small>
-          حساب کاربری و دسترسی‌های معلمان
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('معلمان')">
+        <div class="admin-item-icon">👩‍🏫</div>
+        <strong>مدیریت معلمان</strong>
+        <small>حساب کاربری و دسترسی‌های معلمان</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('پیام‌ها')">
-
-        <div class="admin-item-icon">
-          💬
-        </div>
-
-        <strong>
-          پیام‌ها
-        </strong>
-
-        <small>
-          مدیریت ارتباط مدرسه با خانواده‌ها
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('پیام‌ها')">
+        <div class="admin-item-icon">💬</div>
+        <strong>پیام‌ها</strong>
+        <small>مدیریت ارتباط مدرسه با خانواده‌ها</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('انتقادات و پیشنهادات')">
-
-        <div class="admin-item-icon">
-          💡
-        </div>
-
-        <strong>
-          انتقادات و پیشنهادات
-        </strong>
-
-        <small>
-          مشاهده و رسیدگی به بازخوردهای خانواده‌ها
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('انتقادات و پیشنهادات')">
+        <div class="admin-item-icon">💡</div>
+        <strong>انتقادات و پیشنهادات</strong>
+        <small>مشاهده و رسیدگی به بازخوردهای خانواده‌ها</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('نظرسنجی‌ها')">
-
-        <div class="admin-item-icon">
-          📊
-        </div>
-
-        <strong>
-          نظرسنجی‌ها
-        </strong>
-
-        <small>
-          ایجاد و مدیریت نظرسنجی‌های مدرسه
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('نظرسنجی‌ها')">
+        <div class="admin-item-icon">📊</div>
+        <strong>نظرسنجی‌ها</strong>
+        <small>ایجاد و مدیریت نظرسنجی‌های مدرسه</small>
       </button>
 
-      <button
-        class="admin-item"
-        onclick="adminComingSoon('گالری')">
-
-        <div class="admin-item-icon">
-          🖼️
-        </div>
-
-        <strong>
-          گالری مدرسه
-        </strong>
-
-        <small>
-          مدیریت تصاویر و فعالیت‌های مدرسه
-        </small>
-
+      <button class="admin-item" onclick="adminComingSoon('گالری')">
+        <div class="admin-item-icon">🖼️</div>
+        <strong>گالری مدرسه</strong>
+        <small>مدیریت تصاویر و فعالیت‌های مدرسه</small>
       </button>
 
     </div>
 
     <div class="admin-security">
-
       🔒 <strong>امنیت:</strong>
       حساب شما با نقش <strong>super_admin</strong> وارد شده است.
       سایر نقش‌ها در طراحی نهایی اجازه حذف، تنزل نقش یا محدود کردن حساب مدیر ارشد را نخواهند داشت.
-
     </div>
 
   </section>
 
-  <!-- =========================
-       ANNOUNCEMENTS
-  ========================= -->
-
-  <section
-    id="announcements"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      📢 اطلاعیه‌های مدرسه
-    </h2>
-
+  <section id="announcements" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📢 اطلاعیه‌های مدرسه</h2>
     <div class="item">
-
-      <strong>
-        اطلاعیه جدید
-      </strong>
-
-      <p>
-        اطلاعیه‌های رسمی مدرسه در این بخش نمایش داده خواهد شد.
-      </p>
-
+      <strong>اطلاعیه جدید</strong>
+      <p>اطلاعیه‌های رسمی مدرسه در این بخش نمایش داده خواهد شد.</p>
     </div>
-
   </section>
 
-  <!-- =========================
-       CALENDAR
-  ========================= -->
-
-  <section
-    id="calendar"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      📅 تقویم اجرایی مدرسه
-    </h2>
-
+  <section id="calendar" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📅 تقویم اجرایی مدرسه</h2>
     <div class="item">
-
-      <strong>
-        برنامه‌های اجرایی ماه
-      </strong>
-
-      <p>
-        برنامه‌های مدرسه بر اساس تاریخ و پایه در این بخش نمایش داده می‌شوند.
-      </p>
-
+      <strong>برنامه‌های اجرایی ماه</strong>
+      <p>برنامه‌های مدرسه بر اساس تاریخ و پایه در این بخش نمایش داده می‌شوند.</p>
     </div>
-
   </section>
 
-  <!-- =========================
-       WEEKLY SCHEDULE
-  ========================= -->
-
-  <section
-    id="schedule"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      🗓️ برنامه هفتگی کلاس‌ها
-    </h2>
-
-    <div class="item">
-      پایه اول
-    </div>
-
-    <div class="item">
-      پایه دوم
-    </div>
-
-    <div class="item">
-      پایه سوم
-    </div>
-
-    <div class="item">
-      پایه چهارم
-    </div>
-
-    <div class="item">
-      پایه پنجم
-    </div>
-
-    <div class="item">
-      پایه ششم
-    </div>
-
+  <section id="schedule" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>🗓️ برنامه هفتگی کلاس‌ها</h2>
+    <div class="item">پایه اول</div>
+    <div class="item">پایه دوم</div>
+    <div class="item">پایه سوم</div>
+    <div class="item">پایه چهارم</div>
+    <div class="item">پایه پنجم</div>
+    <div class="item">پایه ششم</div>
   </section>
 
-  <!-- =========================
-       HOMEWORK
-  ========================= -->
-
-  <section
-    id="homework"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      📚 تکالیف و برنامه‌های آموزشی
-    </h2>
-
-    <div class="item">
-
-      تکالیف دانش‌آموزان در این بخش قرار خواهد گرفت.
-
-    </div>
-
+  <section id="homework" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📚 تکالیف و برنامه‌های آموزشی</h2>
+    <div class="item">تکالیف دانش‌آموزان در این بخش قرار خواهد گرفت.</div>
   </section>
 
-  <!-- =========================
-       MANAGEMENT
-  ========================= -->
-
-  <section
-    id="management"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      💬 ارتباط با مدیریت
-    </h2>
-
-    <div class="item">
-
-      امکان ارسال پیام مستقیم به مدیریت مدرسه در این بخش قرار خواهد گرفت.
-
-    </div>
-
+  <section id="management" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>💬 ارتباط با مدیریت</h2>
+    <div class="item">امکان ارسال پیام مستقیم به مدیریت مدرسه در این بخش قرار خواهد گرفت.</div>
   </section>
 
-  <!-- =========================
-       PTA
-  ========================= -->
-
-  <section
-    id="pta"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      👩‍👩‍👧 انجمن اولیا و مربیان
-    </h2>
-
-    <div class="item">
-
-      اخبار و فعالیت‌های انجمن اولیا و مربیان.
-
-    </div>
-
+  <section id="pta" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>👩‍👩‍👧 انجمن اولیا و مربیان</h2>
+    <div class="item">اخبار و فعالیت‌های انجمن اولیا و مربیان.</div>
   </section>
 
-  <!-- =========================
-       FEEDBACK
-  ========================= -->
-
-  <section
-    id="feedback"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      💡 انتقادات و پیشنهادات
-    </h2>
-
-    <div class="item">
-
-      والدین می‌توانند پیشنهادها و انتقادات خود را ثبت کنند.
-
-    </div>
-
+  <section id="feedback" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>💡 انتقادات و پیشنهادات</h2>
+    <div class="item">والدین می‌توانند پیشنهادها و انتقادات خود را ثبت کنند.</div>
   </section>
 
-  <!-- =========================
-       POLLS
-  ========================= -->
-
-  <section
-    id="polls"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      📊 نظرسنجی‌ها
-    </h2>
-
-    <div class="item">
-
-      نظرسنجی‌های فعال مدرسه در این بخش نمایش داده خواهد شد.
-
-    </div>
-
+  <section id="polls" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>📊 نظرسنجی‌ها</h2>
+    <div class="item">نظرسنجی‌های فعال مدرسه در این بخش نمایش داده خواهد شد.</div>
   </section>
 
-  <!-- =========================
-       GALLERY
-  ========================= -->
-
-  <section
-    id="gallery"
-    class="section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
-
-    <h2>
-      🖼️ گالری مدرسه
-    </h2>
-
-    <div class="item">
-
-      تصاویر برنامه‌ها و فعالیت‌های مدرسه.
-
-    </div>
-
+  <section id="gallery" class="section">
+    <button class="back" onclick="goHome()">← بازگشت</button>
+    <h2>🖼️ گالری مدرسه</h2>
+    <div class="item">تصاویر برنامه‌ها و فعالیت‌های مدرسه.</div>
   </section>
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+  <section id="contact" class="section contact-section">
 
-  <section
-    id="contact"
-    class="section contact-section">
-
-    <button
-      class="back"
-      onclick="goHome()">
-
-      ← بازگشت
-
-    </button>
+    <button class="back" onclick="goHome()">← بازگشت</button>
 
     <div class="contact-header">
 
-      <div class="contact-icon">
-        ☎️
-      </div>
+      <div class="contact-icon">☎️</div>
 
-      <h2>
-        تماس با مدرسه
-      </h2>
+      <h2>تماس با مدرسه</h2>
 
-      <p>
-        راه‌های ارتباطی با دبستان دخترانه علوی اسلامی
-      </p>
+      <p>راه‌های ارتباطی با دبستان دخترانه علوی اسلامی</p>
 
     </div>
 
     <div class="contact-grid">
 
       <div class="contact-card">
-
-        <div class="contact-card-icon">
-          👩‍💼
-        </div>
-
+        <div class="contact-card-icon">👩‍💼</div>
         <div class="contact-card-content">
-
-          <span class="contact-label">
-            مدیریت مدرسه
-          </span>
-
-          <strong>
-            سرکارخانم اصغری منش
-          </strong>
-
+          <span class="contact-label">مدیریت مدرسه</span>
+          <strong>سرکارخانم اصغری منش</strong>
         </div>
-
       </div>
 
       <div class="contact-card">
-
-        <div class="contact-card-icon">
-          👩‍🏫
-        </div>
-
+        <div class="contact-card-icon">👩‍🏫</div>
         <div class="contact-card-content">
-
-          <span class="contact-label">
-            معاون آموزشی
-          </span>
-
-          <strong>
-            سرکار خانم رستگار
-          </strong>
-
+          <span class="contact-label">معاون آموزشی</span>
+          <strong>سرکار خانم رستگار</strong>
         </div>
-
       </div>
 
       <div class="contact-card">
-
-        <div class="contact-card-icon">
-          🌱
-        </div>
-
+        <div class="contact-card-icon">🌱</div>
         <div class="contact-card-content">
-
-          <span class="contact-label">
-            معاون پرورشی
-          </span>
-
-          <strong>
-            سرکار خانم توسلی
-          </strong>
-
+          <span class="contact-label">معاون پرورشی</span>
+          <strong>سرکار خانم توسلی</strong>
         </div>
-
       </div>
 
     </div>
@@ -2103,65 +1288,26 @@ body {
     <div class="contact-block">
 
       <div class="block-title">
-
         <span>📞</span>
-
-        <h3>
-          شماره‌های تماس
-        </h3>
-
+        <h3>شماره‌های تماس</h3>
       </div>
 
-      <a
-        class="phone-card"
-        href="tel:02133440505">
-
-        <div class="phone-icon">
-          ☎️
-        </div>
-
+      <a class="phone-card" href="tel:02133440505">
+        <div class="phone-icon">☎️</div>
         <div class="phone-info">
-
-          <span>
-            تلفن مدرسه
-          </span>
-
-          <strong>
-            02133440505
-          </strong>
-
+          <span>تلفن مدرسه</span>
+          <strong>02133440505</strong>
         </div>
-
-        <div class="phone-arrow">
-          ←
-        </div>
-
+        <div class="phone-arrow">←</div>
       </a>
 
-      <a
-        class="phone-card"
-        href="tel:02133562687">
-
-        <div class="phone-icon">
-          ☎️
-        </div>
-
+      <a class="phone-card" href="tel:02133562687">
+        <div class="phone-icon">☎️</div>
         <div class="phone-info">
-
-          <span>
-            تلفن مدرسه
-          </span>
-
-          <strong>
-            02133562687
-          </strong>
-
+          <span>تلفن مدرسه</span>
+          <strong>02133562687</strong>
         </div>
-
-        <div class="phone-arrow">
-          ←
-        </div>
-
+        <div class="phone-arrow">←</div>
       </a>
 
     </div>
@@ -2169,25 +1315,13 @@ body {
     <div class="contact-block">
 
       <div class="block-title">
-
         <span>📍</span>
-
-        <h3>
-          نشانی مدرسه
-        </h3>
-
+        <h3>نشانی مدرسه</h3>
       </div>
 
       <div class="address-card">
-
-        <div class="address-icon">
-          🏫
-        </div>
-
-        <p>
-          خیابان ایران- خیابان شهید قادری- پلاک ۶۱
-        </p>
-
+        <div class="address-icon">🏫</div>
+        <p>خیابان ایران- خیابان شهید قادری- پلاک ۶۱</p>
       </div>
 
       <a
@@ -2196,25 +1330,14 @@ body {
         target="_blank"
         rel="noopener noreferrer">
 
-        <span class="map-button-icon">
-          🗺️
-        </span>
+        <span class="map-button-icon">🗺️</span>
 
         <span>
-
-          <strong>
-            مسیریابی تا مدرسه
-          </strong>
-
-          <small>
-            مشاهده مسیر در نشان
-          </small>
-
+          <strong>مسیریابی تا مدرسه</strong>
+          <small>مشاهده مسیر در نشان</small>
         </span>
 
-        <span class="map-arrow">
-          ←
-        </span>
+        <span class="map-arrow">←</span>
 
       </a>
 
@@ -2223,35 +1346,18 @@ body {
     <div class="contact-block">
 
       <div class="block-title">
-
         <span>🕐</span>
-
-        <h3>
-          ساعات پاسخگویی
-        </h3>
-
+        <h3>ساعات پاسخگویی</h3>
       </div>
 
       <div class="hours-card">
 
-        <div class="hours-icon">
-          ⏰
-        </div>
+        <div class="hours-icon">⏰</div>
 
         <div class="hours-content">
-
-          <span>
-            زمان پاسخگویی مدرسه
-          </span>
-
-          <strong>
-            ۸ صبح الی ۱۳
-          </strong>
-
-          <b>
-            لطفاً در این ساعات با مدرسه تماس بگیرید.
-          </b>
-
+          <span>زمان پاسخگویی مدرسه</span>
+          <strong>۸ صبح الی ۱۳</strong>
+          <b>لطفاً در این ساعات با مدرسه تماس بگیرید.</b>
         </div>
 
       </div>
@@ -2262,63 +1368,83 @@ body {
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer class="footer">
 
   دبستان دخترانه علوی اسلامی
 
   <br>
 
-  <small>
-    سامانه ارتباطی مدرسه و خانواده
-  </small>
+  <small>سامانه ارتباطی مدرسه و خانواده</small>
 
 </footer>
 
+<!--
+====================================================
+SUPABASE
+====================================================
+عمداً با defer بارگذاری می‌شود تا اگر Supabase
+با تأخیر مواجه شد، صفحه مدرسه سفید نشود.
+-->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  defer>
+</script>
+
+<script
+  src="supabase.js"
+  defer>
+</script>
+
 <script>
 
-/* =========================
-   SUPABASE CLIENT
-========================= */
-
 let supabaseClient = null;
-
 let currentUser = null;
-
 let currentProfile = null;
 
-try {
+/* =========================
+   SUPABASE INITIALIZATION
+========================= */
 
-  if (
-    window.supabaseConfig &&
-    window.supabaseConfig.url &&
-    window.supabaseConfig.key &&
-    window.supabase &&
-    typeof window.supabase.createClient === "function"
-  ) {
+function initializeSupabase() {
 
-    supabaseClient = window.supabase.createClient(
-      window.supabaseConfig.url,
-      window.supabaseConfig.key
+  try {
+
+    if (
+      window.supabaseConfig &&
+      window.supabaseConfig.url &&
+      window.supabaseConfig.key &&
+      window.supabase &&
+      typeof window.supabase.createClient === "function"
+    ) {
+
+      supabaseClient = window.supabase.createClient(
+        window.supabaseConfig.url,
+        window.supabaseConfig.key
+      );
+
+      return true;
+
+    }
+
+    console.warn(
+      "Supabase is not ready yet."
     );
 
-  } else {
+    return false;
+
+  } catch (error) {
 
     console.error(
-      "Supabase configuration or library was not found."
+      "Supabase initialization error:",
+      error
     );
 
+    supabaseClient = null;
+
+    return false;
+
   }
-
-} catch (error) {
-
-  console.error(
-    "Supabase initialization error:",
-    error
-  );
 
 }
 
@@ -2345,25 +1471,24 @@ function showSection(id) {
 
   }
 
-  document
-    .getElementById("home")
-    .style.display = "none";
+  const home =
+    document.getElementById("home");
+
+  if (home) {
+    home.style.display = "none";
+  }
 
   document
     .querySelectorAll(".section")
     .forEach(function(section) {
-
       section.classList.remove("active");
-
     });
 
   const target =
     document.getElementById(id);
 
   if (target) {
-
     target.classList.add("active");
-
   }
 
   window.scrollTo({
@@ -2378,14 +1503,15 @@ function goHome() {
   document
     .querySelectorAll(".section")
     .forEach(function(section) {
-
       section.classList.remove("active");
-
     });
 
-  document
-    .getElementById("home")
-    .style.display = "block";
+  const home =
+    document.getElementById("home");
+
+  if (home) {
+    home.style.display = "block";
+  }
 
   window.scrollTo({
     top: 0,
@@ -2406,20 +1532,25 @@ function openLoginModal() {
   const error =
     document.getElementById("loginError");
 
-  if (error) {
+  if (!modal) {
+    return;
+  }
 
+  if (error) {
     error.classList.remove("active");
     error.textContent = "";
-
   }
 
   modal.classList.add("active");
 
   setTimeout(function() {
 
-    document
-      .getElementById("loginEmail")
-      .focus();
+    const emailInput =
+      document.getElementById("loginEmail");
+
+    if (emailInput) {
+      emailInput.focus();
+    }
 
   }, 100);
 
@@ -2427,9 +1558,12 @@ function openLoginModal() {
 
 function closeLoginModal() {
 
-  document
-    .getElementById("loginModal")
-    .classList.remove("active");
+  const modal =
+    document.getElementById("loginModal");
+
+  if (modal) {
+    modal.classList.remove("active");
+  }
 
 }
 
@@ -2438,8 +1572,11 @@ function showLoginError(message) {
   const error =
     document.getElementById("loginError");
 
-  error.textContent = message;
+  if (!error) {
+    return;
+  }
 
+  error.textContent = message;
   error.classList.add("active");
 
 }
@@ -2455,23 +1592,20 @@ async function handleLogin(event) {
   if (!supabaseClient) {
 
     showLoginError(
-      "اتصال سامانه احراز هویت برقرار نشده است. فایل supabase.js را بررسی کنید."
+      "سامانه ورود هنوز آماده نشده است. لطفاً چند لحظه صبر کنید و دوباره تلاش کنید."
     );
+
+    initializeSupabase();
 
     return;
 
   }
 
-  const email =
-    document
-      .getElementById("loginEmail")
-      .value
-      .trim();
+  const emailElement =
+    document.getElementById("loginEmail");
 
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
+  const passwordElement =
+    document.getElementById("loginPassword");
 
   const submitButton =
     document.getElementById("loginSubmit");
@@ -2479,22 +1613,36 @@ async function handleLogin(event) {
   const errorBox =
     document.getElementById("loginError");
 
-  errorBox.classList.remove("active");
-  errorBox.textContent = "";
+  const email =
+    emailElement
+      ? emailElement.value.trim()
+      : "";
 
-  submitButton.disabled = true;
-  submitButton.textContent = "در حال ورود...";
+  const password =
+    passwordElement
+      ? passwordElement.value
+      : "";
+
+  if (errorBox) {
+    errorBox.classList.remove("active");
+    errorBox.textContent = "";
+  }
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "در حال ورود...";
+  }
 
   try {
 
-    const { data, error } =
+    const result =
       await supabaseClient.auth.signInWithPassword({
-
         email: email,
-
         password: password
-
       });
+
+    const data = result.data;
+    const error = result.error;
 
     if (error) {
 
@@ -2536,8 +1684,10 @@ async function handleLogin(event) {
 
   } finally {
 
-    submitButton.disabled = false;
-    submitButton.textContent = "ورود";
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "ورود";
+    }
 
   }
 
@@ -2555,14 +1705,14 @@ async function logoutUser() {
 
   try {
 
-    const { error } =
+    const result =
       await supabaseClient.auth.signOut();
 
-    if (error) {
+    if (result.error) {
 
       console.error(
         "Logout error:",
-        error
+        result.error
       );
 
       return;
@@ -2570,13 +1720,10 @@ async function logoutUser() {
     }
 
     currentUser = null;
-
     currentProfile = null;
 
     updateLoginUI(null);
-
     hideAdminDashboard();
-
     goHome();
 
   } catch (error) {
@@ -2605,16 +1752,19 @@ function updateLoginUI(user) {
   const logoutButton =
     document.getElementById("logoutButton");
 
+  if (!status || !loginButton || !logoutButton) {
+    return;
+  }
+
   if (user) {
 
-    let displayName =
+    const displayName =
       user.email || "کاربر سامانه";
 
     status.textContent =
       "وارد شده: " + displayName;
 
     loginButton.style.display = "none";
-
     logoutButton.style.display = "inline-block";
 
   } else {
@@ -2623,7 +1773,6 @@ function updateLoginUI(user) {
       "برای ورود به بخش‌های اختصاصی سامانه وارد شوید.";
 
     loginButton.style.display = "inline-block";
-
     logoutButton.style.display = "none";
 
   }
@@ -2642,16 +1791,17 @@ async function loadUserProfile(user) {
 
   try {
 
-    const {
-      data,
-      error
-    } = await supabaseClient
-      .from("profiles")
-      .select(
-        "id, full_name, username, role, grade_level, class_name, is_active"
-      )
-      .eq("id", user.id)
-      .maybeSingle();
+    const result =
+      await supabaseClient
+        .from("profiles")
+        .select(
+          "id, full_name, username, role, grade_level, class_name, is_active"
+        )
+        .eq("id", user.id)
+        .maybeSingle();
+
+    const data = result.data;
+    const error = result.error;
 
     if (error) {
 
@@ -2661,7 +1811,6 @@ async function loadUserProfile(user) {
       );
 
       currentProfile = null;
-
       hideAdminDashboard();
 
       return;
@@ -2697,7 +1846,6 @@ async function loadUserProfile(user) {
     );
 
     currentProfile = null;
-
     hideAdminDashboard();
 
   }
@@ -2705,7 +1853,7 @@ async function loadUserProfile(user) {
 }
 
 /* =========================
-   ADMIN DASHBOARD VISIBILITY
+   ADMIN DASHBOARD
 ========================= */
 
 function showAdminDashboard() {
@@ -2716,9 +1864,7 @@ function showAdminDashboard() {
     );
 
   if (card) {
-
     card.style.display = "block";
-
   }
 
 }
@@ -2731,9 +1877,7 @@ function hideAdminDashboard() {
     );
 
   if (card) {
-
     card.style.display = "none";
-
   }
 
 }
@@ -2805,7 +1949,7 @@ function adminComingSoon(title) {
 }
 
 /* =========================
-   CHECK CURRENT SESSION
+   CHECK SESSION
 ========================= */
 
 async function checkCurrentUser() {
@@ -2813,7 +1957,6 @@ async function checkCurrentUser() {
   if (!supabaseClient) {
 
     updateLoginUI(null);
-
     hideAdminDashboard();
 
     return;
@@ -2822,10 +1965,11 @@ async function checkCurrentUser() {
 
   try {
 
-    const {
-      data,
-      error
-    } = await supabaseClient.auth.getSession();
+    const result =
+      await supabaseClient.auth.getSession();
+
+    const data = result.data;
+    const error = result.error;
 
     if (error) {
 
@@ -2835,7 +1979,6 @@ async function checkCurrentUser() {
       );
 
       updateLoginUI(null);
-
       hideAdminDashboard();
 
       return;
@@ -2862,11 +2005,9 @@ async function checkCurrentUser() {
     } else {
 
       currentUser = null;
-
       currentProfile = null;
 
       updateLoginUI(null);
-
       hideAdminDashboard();
 
     }
@@ -2879,7 +2020,6 @@ async function checkCurrentUser() {
     );
 
     updateLoginUI(null);
-
     hideAdminDashboard();
 
   }
@@ -2887,7 +2027,7 @@ async function checkCurrentUser() {
 }
 
 /* =========================
-   AUTH STATE LISTENER
+   AUTH LISTENER
 ========================= */
 
 function setupAuthListener() {
@@ -2896,70 +2036,128 @@ function setupAuthListener() {
     return;
   }
 
-  supabaseClient.auth.onAuthStateChange(
-    async function(event, session) {
+  try {
 
-      if (
-        session &&
-        session.user
-      ) {
+    supabaseClient.auth.onAuthStateChange(
+      async function(event, session) {
 
-        currentUser =
-          session.user;
-
-        updateLoginUI(
+        if (
+          session &&
           session.user
-        );
+        ) {
 
-        await loadUserProfile(
-          session.user
-        );
+          currentUser =
+            session.user;
 
-      } else {
+          updateLoginUI(
+            session.user
+          );
 
-        currentUser = null;
+          await loadUserProfile(
+            session.user
+          );
 
-        currentProfile = null;
+        } else {
 
-        updateLoginUI(null);
+          currentUser = null;
+          currentProfile = null;
 
-        hideAdminDashboard();
+          updateLoginUI(null);
+          hideAdminDashboard();
+
+        }
 
       }
+    );
 
-    }
-  );
+  } catch (error) {
+
+    console.error(
+      "Auth listener error:",
+      error
+    );
+
+  }
 
 }
 
 /* =========================
-   CLOSE MODAL BY BACKDROP
+   START
 ========================= */
 
-document
-  .getElementById("loginModal")
-  .addEventListener(
-    "click",
-    function(event) {
+function startApplication() {
 
-      if (
-        event.target === this
-      ) {
+  /*
+   * اول خود سایت کاملاً نمایش داده می‌شود.
+   * سپس تلاش می‌کنیم Supabase را فعال کنیم.
+   */
 
-        closeLoginModal();
+  updateLoginUI(null);
+  hideAdminDashboard();
+
+  const ready =
+    initializeSupabase();
+
+  if (ready) {
+
+    checkCurrentUser();
+    setupAuthListener();
+
+  } else {
+
+    /*
+     * اگر Supabase هنوز توسط defer بارگذاری نشده باشد،
+     * چند لحظه بعد دوباره امتحان می‌کنیم.
+     */
+
+    setTimeout(function() {
+
+      const retry =
+        initializeSupabase();
+
+      if (retry) {
+
+        checkCurrentUser();
+        setupAuthListener();
 
       }
 
-    }
-  );
+    }, 500);
+
+  }
+
+}
 
 /* =========================
-   START AUTH SYSTEM
+   MODAL BACKDROP
 ========================= */
 
-checkCurrentUser();
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
 
-setupAuthListener();
+    const modal =
+      document.getElementById("loginModal");
+
+    if (modal) {
+
+      modal.addEventListener(
+        "click",
+        function(event) {
+
+          if (event.target === this) {
+            closeLoginModal();
+          }
+
+        }
+      );
+
+    }
+
+    startApplication();
+
+  }
+);
 
 </script>
 
